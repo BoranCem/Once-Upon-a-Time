@@ -3,29 +3,30 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
+    public TMP_Text characterName;
     public TMP_Text dialogueText;
 
-    private string[] dialogue =
-    {
-        "Bugün hava biraz soğuk.",
-        "Yoğun bir gün geçirdim.",
-        "Bana bir kokteyl hazırlar mısın?"
-    };
-
+    public DialogueData dialogue;
     private int index = 0;
 
     void Start()
     {
-        dialogueText.text = dialogue[index];
+        ShowDialogue();
     }
+
+    private void ShowDialogue()
+{
+    characterName.text = dialogue.lines[index].speaker;
+    dialogueText.text = dialogue.lines[index].text;
+}
 
     public void NextDialogue()
-    {
-        index++;
+{
+    index++;
 
-        if (index < dialogue.Length)
-        {
-            dialogueText.text = dialogue[index];
-        }
+    if(index < dialogue.lines.Length)
+    {
+        ShowDialogue();
     }
+}
 }
