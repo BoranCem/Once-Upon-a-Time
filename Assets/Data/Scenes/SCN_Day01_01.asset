@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d718411ef62e45488b694931352f519, type: 3}
+  m_Name: SCN_Day01_01
+  m_EditorClassIdentifier: Assembly-CSharp::SceneData
+  characters:
+  - {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+  - {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+  - {fileID: 11400000, guid: 2d2c7f96e68272245881aa66fb59909e, type: 2}
+  dialogue: {fileID: 11400000, guid: 9a60ec0e05a0a5d45a821577cbd634b5, type: 2}
