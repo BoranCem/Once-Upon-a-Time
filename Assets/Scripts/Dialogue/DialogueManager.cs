@@ -31,27 +31,23 @@ public class DialogueManager : MonoBehaviour
 
     private void ShowDialogue()
     {
-        characterName.text = dialogue.lines[index].speaker;
+        characterName.text = dialogue.lines[index].speaker.characterName;
+        characterName.color = dialogue.lines[index].speaker.nameColor;
+
         dialogueText.text = dialogue.lines[index].text;
     }
 
     public void NextDialogue()
+{
+    index++;
+
+    if (index < dialogue.lines.Length)
     {
-        index++;
-
-        if (index < dialogue.lines.Length)
-        {
-            ShowDialogue();
-        }
-        else
-        {
-            Debug.Log("Dialogue Finished");
-
-            // Buraya daha sonra:
-            // CustomerManager.NextCustomer();
-            // veya
-            // CocktailPanel.SetActive(true);
-            // yazacağız.
-        }
+        ShowDialogue();
     }
+    else
+    {
+        Debug.Log("Dialogue Finished!");
+    }
+}
 }
