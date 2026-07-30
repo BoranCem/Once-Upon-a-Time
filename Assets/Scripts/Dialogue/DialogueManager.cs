@@ -53,7 +53,14 @@ public class DialogueManager : MonoBehaviour
 {
     Debug.Log("Dialogue Finished!");
 
-    cocktailPanel.SetActive(true);
+    OpenCocktailPanel();}
 }
+public void OpenCocktailPanel()
+{
+    cocktailPanel.SetActive(true);
+
+    RectTransform panel = cocktailPanel.GetComponent<RectTransform>();
+
+    panel.anchoredPosition = Vector2.zero;
 }
 }

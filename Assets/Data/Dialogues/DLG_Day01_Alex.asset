@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: DLG_Day01_Alex
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   lines:
-  - speaker: alex
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
     text: sa
-  - speaker: barmen
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
     text: as kardes
-  - speaker: alex
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
     text: naban
-  - speaker: barmen
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
     text: "valla oturmusum kend\u0131me sen naban"
