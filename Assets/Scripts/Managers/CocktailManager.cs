@@ -9,6 +9,11 @@ public class CocktailManager : MonoBehaviour
     [Header("UI")]
     public Transform ingredientGrid;
 
+    [Header("Selected Slots")]
+    public SelectedSlot slot1;
+    public SelectedSlot slot2;
+    public SelectedSlot slot3;
+    
     public IngredientButton ingredientButtonPrefab;
 
     private List<IngredientData> selectedIngredients = new();
@@ -30,15 +35,30 @@ public class CocktailManager : MonoBehaviour
     }
 
     public void SelectIngredient(IngredientData ingredient)
+{
+    if (selectedIngredients.Count >= 3)
     {
-        if (selectedIngredients.Count >= 3)
-        {
-            Debug.Log("3 ingredient already selected.");
-            return;
-        }
-
-        selectedIngredients.Add(ingredient);
-
-        Debug.Log("Selected: " + ingredient.ingredientName);
+        Debug.Log("Maximum ingredient selected.");
+        return;
     }
+
+    selectedIngredients.Add(ingredient);
+
+    switch (selectedIngredients.Count)
+    {
+        case 1:
+            slot1.SetIngredient(ingredient);
+            break;
+
+        case 2:
+            slot2.SetIngredient(ingredient);
+            break;
+
+        case 3:
+            slot3.SetIngredient(ingredient);
+            break;
+    }
+
+    Debug.Log("Selected : " + ingredient.ingredientName);
+}
 }
