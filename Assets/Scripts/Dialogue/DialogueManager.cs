@@ -10,16 +10,20 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue")]
     public DialogueData dialogue;
 
+    [Header("Panels")]
+    public GameObject cocktailPanel;
+
     private int index = 0;
 
     void Start()
+{
+    cocktailPanel.SetActive(false);
+
+    if (dialogue != null)
     {
-        // Eğer Inspector'dan bir diyalog atanmışsa otomatik başlat
-        if (dialogue != null)
-        {
-            StartDialogue(dialogue);
-        }
+        StartDialogue(dialogue);
     }
+}
 
     public void StartDialogue(DialogueData newDialogue)
     {
@@ -46,8 +50,10 @@ public class DialogueManager : MonoBehaviour
         ShowDialogue();
     }
     else
-    {
-        Debug.Log("Dialogue Finished!");
-    }
+{
+    Debug.Log("Dialogue Finished!");
+
+    cocktailPanel.SetActive(true);
+}
 }
 }
