@@ -61,4 +61,16 @@ public class CocktailManager : MonoBehaviour
 
     Debug.Log("Selected : " + ingredient.ingredientName);
 }
+
+public void MixDrink()
+{
+    if (selectedIngredients.Count != 3)
+    {
+        Debug.Log("Select 3 ingredients first!");
+        return;
+    }
+
+    Debug.Log("Mixing drink...");
+}
+
 }
