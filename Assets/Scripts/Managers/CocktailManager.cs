@@ -69,11 +69,20 @@ public void MixDrink()
 {
     if (selectedIngredients.Count != 3)
     {
-        Debug.Log("Select 3 ingredients first!");
+        Debug.Log("Please select 3 ingredients.");
         return;
     }
 
-    Debug.Log("Mixing drink...");
+    RecipeData recipe = FindRecipe();
+
+    if (recipe != null)
+    {
+        Debug.Log("Cocktail Created: " + recipe.recipeName);
+    }
+    else
+    {
+        Debug.Log("Unknown Cocktail");
+    }
 }
 
 private RecipeData FindRecipe()
