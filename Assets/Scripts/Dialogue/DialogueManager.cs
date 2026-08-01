@@ -45,22 +45,43 @@ public class DialogueManager : MonoBehaviour
 {
     index++;
 
-    if (index < dialogue.lines.Length)
+    if (index >= dialogue.lines.Length)
     {
-        ShowDialogue();
+        Debug.Log("Dialogue Finished!");
+        return;
     }
-    else
-{
-    Debug.Log("Dialogue Finished!");
 
-    OpenCocktailPanel();}
+    DialogueLine currentLine = dialogue.lines[index];
+
+    switch (currentLine.action)
+    {
+        case DialogueAction.WaitForCocktail:
+
+            dialogueText.text = "";
+            characterName.text = "";
+
+            OpenCocktailPanel();
+
+            break;
+
+        default:
+
+            ShowDialogue();
+
+            break;
+    }
 }
 public void OpenCocktailPanel()
 {
     cocktailPanel.SetActive(true);
 
     RectTransform panel = cocktailPanel.GetComponent<RectTransform>();
-
     panel.anchoredPosition = Vector2.zero;
 }
+
+public void ContinueDialogue()
+{
+    ShowDialogue();
+}
+
 }
