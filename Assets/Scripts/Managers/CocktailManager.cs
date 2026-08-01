@@ -83,6 +83,8 @@ public void MixDrink()
     {
         Debug.Log("Unknown Cocktail");
     }
+
+    ClearSelection();
 }
 
 private RecipeData FindRecipe()
@@ -98,6 +100,15 @@ private RecipeData FindRecipe()
     }
 
     return null;
+}
+
+public void ClearSelection()
+{
+    selectedIngredients.Clear();
+
+    slot1.Clear();
+    slot2.Clear();
+    slot3.Clear();
 }
 
 }
