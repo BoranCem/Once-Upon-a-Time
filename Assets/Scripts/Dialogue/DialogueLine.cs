@@ -8,4 +8,6 @@ public class DialogueLine
 
     [TextArea(3,6)]
     public string text;
+
+    public DialogueAction action;
 }
