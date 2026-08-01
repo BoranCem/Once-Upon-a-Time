@@ -13,6 +13,9 @@ public class CocktailManager : MonoBehaviour
     public SelectedSlot slot1;
     public SelectedSlot slot2;
     public SelectedSlot slot3;
+
+    [Header("Recipes")]
+    public List<RecipeData> recipes = new();
     
     public IngredientButton ingredientButtonPrefab;
 
@@ -71,6 +74,21 @@ public void MixDrink()
     }
 
     Debug.Log("Mixing drink...");
+}
+
+private RecipeData FindRecipe()
+{
+    foreach (RecipeData recipe in recipes)
+    {
+        if (recipe.primary == selectedIngredients[0] &&
+            recipe.secondary == selectedIngredients[1] &&
+            recipe.third == selectedIngredients[2])
+        {
+            return recipe;
+        }
+    }
+
+    return null;
 }
 
 }
