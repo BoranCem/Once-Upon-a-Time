@@ -1,12 +1,10 @@
 using System;
-using UnityEngine;
 
 [Serializable]
 public class DialogueLine
 {
     public CharacterData speaker;
-
-    [TextArea(3,6)]
+    [TextArea]
     public string text;
 
     public DialogueAction action;

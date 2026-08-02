@@ -81,6 +81,14 @@ public void OpenCocktailPanel()
 
 public void ContinueDialogue()
 {
+    index++;
+
+    if (index >= dialogue.lines.Length)
+    {
+        Debug.Log("Dialogue Finished!");
+        return;
+    }
+
     ShowDialogue();
 }
 
