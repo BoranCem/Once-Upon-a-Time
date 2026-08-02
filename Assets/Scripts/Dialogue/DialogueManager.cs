@@ -92,4 +92,9 @@ public void ContinueDialogue()
     ShowDialogue();
 }
 
+public void CloseCocktailPanel()
+{
+    cocktailPanel.SetActive(false);
+}
+
 }

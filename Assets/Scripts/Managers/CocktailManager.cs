@@ -16,6 +16,9 @@ public class CocktailManager : MonoBehaviour
 
     [Header("Recipes")]
     public List<RecipeData> recipes = new();
+
+    [Header("Dialogue")]
+    public DialogueManager dialogueManager;
     
     public IngredientButton ingredientButtonPrefab;
 
@@ -85,6 +88,8 @@ public void MixDrink()
     }
 
     ClearSelection();
+    dialogueManager.CloseCocktailPanel();
+    dialogueManager.ContinueDialogue();
 }
 
 private RecipeData FindRecipe()

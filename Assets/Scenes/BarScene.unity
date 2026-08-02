@@ -2330,6 +2330,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2d553b3d19fa9274f85bf26c6d1301ef, type: 2}
   - {fileID: 11400000, guid: 732a1f66b0023e84f95c1842c43b39d8, type: 2}
   - {fileID: 11400000, guid: 337893bffd98e964d9f6c3e03a9ced75, type: 2}
+  dialogueManager: {fileID: 60588573}
   ingredientButtonPrefab: {fileID: 7890575843003848139, guid: b4fc6ef3f3a86a746b1962e5e94d0c59, type: 3}
 --- !u!1 &2118879180
 GameObject:

@@ -1,9 +1,11 @@
 using System;
+using UnityEngine;
 
 [Serializable]
 public class DialogueLine
 {
     public CharacterData speaker;
+
     [TextArea]
     public string text;
 
