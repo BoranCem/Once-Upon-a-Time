@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d50dafde6c9f23245894852da69c3b3e, type: 3}
-  m_Name: CHR_Alex
+  m_Name: CHR_Imhotep
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
-  characterName: Alex
+  characterName: 
   portrait: {fileID: 0}
-  nameColor: {r: 0.899371, g: 0.042423047, b: 0.109569065, a: 1}
+  nameColor: {r: 1, g: 1, b: 1, a: 1}
