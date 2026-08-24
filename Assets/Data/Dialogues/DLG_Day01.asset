@@ -1,0 +1,297 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc86b18e98546a4c8ffcf904a7aea04, type: 3}
+  m_Name: DLG_Day01
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "Hello. I didn\u2019t expect to find a bar in a place like that."
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Hello, welcome. Yeah, there is a long story about that. I think I have
+      seen you for the first time. Where did you come from?
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: I head back to my home from work. I think I missed my turn. When I saw
+      this place, it caught my attention. It looks authentic.
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Hmhm I see, it's a long time since I have been here. Speaking of time,
+      which time have you come from?
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Uhh, that's a weird question. It's 2178.
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Ohh, I got it. You are one of the future fans.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: What? What are you talking about?
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Oh wait, aren't you a time traveller?
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Noope.
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Oh my bad. All of my customers are time travellers. I thought you were
+      one of them.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Interesting. Why do they come to this place?
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "When I first came here, they started coming here. I asked some of them
+      but they were quite drunk, so I couldn\u2019t get an answer. The only thing
+      I get is that this place is easy for them to come to."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "Cool. You said \u201CI first came here\u201D. When and why did you come
+      here?"
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Do you know the earth? When I lived there, I worked in this bar. Then puff,
+      the whole bar completely spawn in the space.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: WHAT??!? HOW?? HOW COULD YOU BREATH? HOW CAN I BREATH?
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "Calm down. I don\u2019t know, I just did and never asked why."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "Do you know anything? Your life completely changed and you never asked
+      why? Are you okay? Didn\u2019t want you to go back to your normal life?"
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "In the beginning I didn\u2019t understand what was going on. I can\u2019t
+      describe my thoughts when I got outside of the bar. It\u2019s like the whole
+      universe was under my feet, but I was lost in it.  "
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "About my normal life, it was not like that I wanted to. I just wait for
+      something to come into my life and make my life liveable. And when this thing
+      happened, I thought it finally came. Aaand don\u2019t you see the outside,
+      it is the most beautiful thing I\u2019ve ever seen. "
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "Wow, I didn\u2019t expect that. That\u2019s rough buddy. It\u2019s hard
+      for me to get it. Don\u2019t you have a family or friend? Someone who would
+      worry about you?"
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: I had, but they weren't the reason I wanted to keep living.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: 'You are so cruel. What keeps you going now then? '
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "It\u2019s nice to listen to time travelers\u2019 stories, and I like to
+      make cocktails. By the way, I didn\u2019t ask you what you would like?"
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: You came to a really weird place I guess. I need to drive, give me something
+      light.
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "it\u2019s coming."
+    action: 1
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Yes, what do you think?
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "I\u2019ve never had a taste like that before. What is that? Do not mistaken
+      me, it's good but different."
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "Oh for real? It was quite popular in my time. it\u2019s mojito."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: By the way, what's your time, which year?
+    action: 0
+  - speaker: {fileID: 11400000, guid: 2d2c7f96e68272245881aa66fb59909e, type: 2}
+    text: Ayee!! How be me favorite barman doin'?
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Hello Boran, where are you coming?
+    action: 0
+  - speaker: {fileID: 11400000, guid: 2d2c7f96e68272245881aa66fb59909e, type: 2}
+    text: "Where else would I be comin\u2019 from? The sea, o\u2019 course. Who\u2019s
+      this scrawny little lass"
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: I hope you are not saying that to me.
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "Ummm\u2026 anyway. I\u2019m sorry I forgot to ask your name. What is it? "
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Arya.
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "It\u2019s a cool name. She came from 2178."
+    action: 0
+  - speaker: {fileID: 11400000, guid: 2d2c7f96e68272245881aa66fb59909e, type: 2}
+    text: "Pfft. Are ye one o\u2019 the future fans?"
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "No. I\u2019m not a time traveler. I was going home."
+    action: 0
+  - speaker: {fileID: 11400000, guid: 2d2c7f96e68272245881aa66fb59909e, type: 2}
+    text: "Har har har!! Then what ye doin\u2019 here? How ye findin\u2019 here?"
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "I don\u2019t know either. When I was coming from work, I turned on the
+      autopilot then took a little nap. When I woke up, my navigator wasn\u2019t
+      working then I saw here."
+    action: 0
+  - speaker: {fileID: 11400000, guid: 2d2c7f96e68272245881aa66fb59909e, type: 2}
+    text: Har har har! Me loves this lassie. This place be trapped in time an' space.
+      Ye ain't comin' here, nor goin' anywhere, unless ye be a time traveller. Seems
+      yer autopilot ain't good enough.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: WHAT!!?! B-but I have my husband and children. There should be a way out
+    action: 0
+  - speaker: {fileID: 11400000, guid: 2d2c7f96e68272245881aa66fb59909e, type: 2}
+    text: "Uhmm maybe it could be a way but i don\u2019t know. Don\u2019t ye see
+      that lad? He\u2019s been here for a long time."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "No no no!! I can't stay here like him. Aren\u2019t you a time traveller?
+      Can you help me to go back to my time?"
+    action: 0
+  - speaker: {fileID: 11400000, guid: 2d2c7f96e68272245881aa66fb59909e, type: 2}
+    text: "Huh, what? I didn\u2019t listen to ye, ye talk too much. Let me drink
+      some rum first. Ayee, barman pour me somethin\u2019 strong."
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "It\u2019s coming."
+    action: 1
+  - speaker: {fileID: 11400000, guid: 2d2c7f96e68272245881aa66fb59909e, type: 2}
+    text: "Arrrr!! Okay, now it\u2019s like that, there is a special \u201Ctime traveller
+      gens in our DNA\u201D. Not anyone can be a time traveller. Probably time travellers
+      have the same ancestor."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Then how can I be here? I am not a time traveller, you have an idea I guess.
+    action: 0
+  - speaker: {fileID: 11400000, guid: 2d2c7f96e68272245881aa66fb59909e, type: 2}
+    text: I don't know. Maybe yer autopilot threw ye into a wormhole or somethin'.
+      I sail me ship to keep meself safe from accidents like that.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: You are not helping right now. HOW CAN I GET OUT OF HERE??!?
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "Hey, calm down. I might have a way out, but I\u2019ve never used it."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: What is it? Say it now.
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: You can try to throw yourself off this cliff.
+    action: 0
+  - speaker: {fileID: 11400000, guid: 2d2c7f96e68272245881aa66fb59909e, type: 2}
+    text: Har har har!
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "You are kidding right? I\u2019m trapped with a bunch of lunatics. My life
+      ends here. I think I\u2019ll throw myself."
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Okay okay, calm down. It was just a joke. When I first came here, I asked
+      my customers for help, but then I decided to stay here. We may find a way out
+      from them, but first, you need to calm down.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Okay okay. When would they come?
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: I don't know. There isn't really a concept of time here.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "I can\u2019t believe I\u2019m trapped with you here."
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "You are getting anxious again, let me give you another drink. It\u2019s
+      on the house. "
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "Since I can\u2019t go, then give me something strong."
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "Okay, it\u2019s coming."
+    action: 1
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "Ew! What\u2019s that?"
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "Don\u2019t you like it?"
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "It\u2019s just not for me. Something is craving my mind. Do your ingredients
+      never run out?"
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "Nope. Everytime I wake up, it\u2019s refilled.. I think I\u2019m in something
+      like a time loop."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "You are in a magical place, and never wondering what\u2019s happening."
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Do you believe in magic in 2178?
+    action: 0
+  - speaker: {fileID: 11400000, guid: 2d2c7f96e68272245881aa66fb59909e, type: 2}
+    text: "Ayee I\u2019m leavin\u2019 lads. The seas are waitin\u2019 for me."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Before you leave, can I ask you one more question?
+    action: 0
+  - speaker: {fileID: 11400000, guid: 2d2c7f96e68272245881aa66fb59909e, type: 2}
+    text: Huh, go on lassie.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: You can travel the time, you can go any time you want, but you still chose
+      to be a pirate. Why is that?
+    action: 0
+  - speaker: {fileID: 11400000, guid: 2d2c7f96e68272245881aa66fb59909e, type: 2}
+    text: "Ye're askin' weird questions. First o\u2019 all, I don't need a reason
+      to be drunk. Second\u2026 It's fun."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Is that it?
+    action: 0
+  - speaker: {fileID: 11400000, guid: 2d2c7f96e68272245881aa66fb59909e, type: 2}
+    text: "Yes little fella, that\u2019s it. I\u2019m doin\u2019 what makes me happy."
+    action: 2
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Am I the crazy one here, or are you all just ridiculously relaxed?
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Eh... I guess everyone sees life differently.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Eh, I guess so, now what are we gonna do?
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "I don\u2019t know, my shift is over. I\u2019m gonna get some good rest
+      now."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Hey, you said this place doesn't have the concept of time.
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Ssshhh.
+    action: 3
