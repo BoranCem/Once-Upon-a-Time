@@ -12,4 +12,327 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc86b18e98546a4c8ffcf904a7aea04, type: 3}
   m_Name: DLG_Day02
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
-  lines: []
+  lines:
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: When will your customers come?
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "Don\u2019t know. You are so impatient."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "No, I\u2019m not. I just want to go back to my life. Unless you, I had
+      a beautiful life."
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Hey, that was rude. While we are waiting, I can make you a drink.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Hmm okay, do you have any recommendations?
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: What kind of taste do you want?
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Give me something to wake me up and you could use vodka.
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "Okay I have an idea. It\u2019s coming"
+    action: 1
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: What do you think?
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "Mmm, it\u2019s better than I think. What is its name?"
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "Happy to hear that, it\u2019s White Russian."
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: Hey fellas, How are you guys doing?
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "Eh, same old, same old. What\u2019s up to you?"
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: Business as usual. Hey, why do you give me that look?
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "I\u2019m sorry, I\u2019m just shocked. Are you an alien or something?"
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: Haha, alien she said. Who are you, you are not a time traveller, are you?
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "I am not. My name is Arya. I\u2019m sorry this is the first time I\u2019m
+      seeing your species."
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: "It\u2019s alright. Name is Imhotep. Hey, can I get Blue Lagoon?"
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "It\u2019s coming."
+    action: 1
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: Ohh, needed it.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Hey, may I ask a question?
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: Yeah yeah go on.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Why are you wearing that clothes? What time are you from?
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: Ah, yes I came from ancient Egypt from Earth.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "No way, Don\u2019t say that you are making the Pyramids."
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: "Bingo. It\u2019s my final project, is it getting popular in the future?"
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Hmhm, we can say that. One more question? One of the time travelers said
+      all the time travellers could have the same ancestor. And he is human, that
+      means you have a human ancestor or he has an alien ancestor.
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: "Heh, good catch. Yes I have a human ancestor in the past. It\u2019s kinda
+      shame for my people, but it\u2019s a precious thing for me."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Oh cool cool, do you know this ancestor?
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: Nope, it was ten generations before. I knew I had a human ancestor because
+      my family was banished from our community.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "I am sorry to hear that. I don\u2019t know what to say but it\u2019s a
+      shame. It\u2019s just love."
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: "Yeah I know, it\u2019s best for us to stay away from them if they think
+      like that. And I\u2019m happy with my life. I just want to finish my school."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Why did you select the Earth for your project?
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: 'I want to thank my ancestor for giving me that power. And Earth has an
+      amazing man power, especially in that time. You give them just beer and bread,
+      then they give you all their power.
+
+'
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "That\u2019s a reason for that, They are slaves, they have to work."
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: "Ahh, that explains a lot. Don\u2019t give me that look."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: First time I think I found a normal person, then he turned out to be a
+      slave abuser.
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: "Hey, I didn\u2019t know that. And you said my project will be popular
+      in the future, they work for good."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "It doesn\u2019t change that you are a slave abuser."
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: "Oh come on, they were slaves before me. I can\u2019t make them free. I
+      can\u2019t change the whole system of slavery."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "It doesn\u2019t mean you can use them for your own sake, you became a
+      part of the system."
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: "My goal is a good thing, for that I don\u2019t think I\u2019m doing the
+      wrong thing."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "I don\u2019t say you are a bad person, just\u2026 It\u2019s not right."
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: "I\u2019m sorry but, we don\u2019t think the same way."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Yeah, agree.
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: Anyway, I need to get back to my work.
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: See ya.
+    action: 0
+  - speaker: {fileID: 11400000, guid: c9d8c52191dc15d489934b4cd785de45, type: 2}
+    text: Later.
+    action: 2
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "He is a good guy actually, kindest of all my customers. He just wants
+      to achieve something great and he\u2019ll do it."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "I know, I just.. it doesn\u2019t feel right. I don\u2019t know maybe I
+      overreacted but, he is the part of the system and doesn't try to change anything."
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "You are right, next time when he comes, I\u2019ll talk to him. He\u2019ll
+      understand. If you want, you can talk."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "I don\u2019t know. AH, I forgot to ask for help to get out of here."
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "He is a regular. He\u2019ll come again, we\u2019ll ask then."
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Here comes our rescue.
+    action: 0
+  - speaker: {fileID: 11400000, guid: 311660320f967494fa1820da4b70b065, type: 2}
+    text: What? What are you talking about?
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: First, welcome, and we need your help.
+    action: 0
+  - speaker: {fileID: 11400000, guid: 311660320f967494fa1820da4b70b065, type: 2}
+    text: "Pff what\u2019s it? Just wait, I need a drink first."
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Of course, my bad. What do you want?
+    action: 0
+  - speaker: {fileID: 11400000, guid: 311660320f967494fa1820da4b70b065, type: 2}
+    text: The usual please.
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Uhmm, I think I forgot yours.
+    action: 0
+  - speaker: {fileID: 11400000, guid: 311660320f967494fa1820da4b70b065, type: 2}
+    text: "It\u2019s whiskey sour, and I do not want you to remind you again. Keep
+      that in your mind."
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "Okey madam, it\u2019ll never happen again."
+    action: 1
+  - speaker: {fileID: 11400000, guid: 311660320f967494fa1820da4b70b065, type: 2}
+    text: "Thank you, it is quite good. Very well what is your problem my dear fellows.
+      I think it\u2019s about this lovely lady. Hello, my name is Layla. May I ask
+      your name?"
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "It\u2019s Arya. A pleasure to meet you."
+    action: 0
+  - speaker: {fileID: 11400000, guid: 311660320f967494fa1820da4b70b065, type: 2}
+    text: The pleasure is mine. Well, I am listening to you.
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: "The problem is Arya is not a time traveler and she is stuck here. We don\u2019t
+      know how she came here, and she came from 2178 Earth."
+    action: 0
+  - speaker: {fileID: 11400000, guid: 311660320f967494fa1820da4b70b065, type: 2}
+    text: "Hmm, curious. Are you sure she is not a time traveller because it\u2019s
+      quite impossible to get here unless you are not a time traveller. BUT, I have
+      heard of some anomalies in 2178. It could be about it."
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: What kind of anomaly of that?
+    action: 0
+  - speaker: {fileID: 11400000, guid: 311660320f967494fa1820da4b70b065, type: 2}
+    text: I've only just heard of the matter from a friend. I'm afraid I don't yet
+      know the full details. I'll look into it once I'm finished here. If you don't
+      mind, madam, would you tell me what happened before you came here?
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "I was at my ship, as usual I was going home from my work. I took my ship
+      on autopilot and took a nap. When I woke up, I was in the middle of nothing,
+      my GPS wasn\u2019t working. Then I saw and came here."
+    action: 0
+  - speaker: {fileID: 11400000, guid: 311660320f967494fa1820da4b70b065, type: 2}
+    text: I see... If you don't mind, I'd like to ask you a few questions. Where
+      do you live, and where do you work? Which route do you usually take? Did you
+      happen to take a different route that day? And finally... Did you feel any
+      different than usual when you woke up?
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "Uhmm\u2026 My work place at Mars Area 53, my home at Earth Area 128.67.
+      I used road 4 as usual. I don\u2019t know how to explain the feeling, it\u2019s
+      like I felt emptiness inside of my body. If I breathe deeply, my body fills
+      up with all the air inside the ship and I become a balloon."
+    action: 0
+  - speaker: {fileID: 11400000, guid: 311660320f967494fa1820da4b70b065, type: 2}
+    text: "Well, based on the information you've given me, I can conclude the following.
+      Your workplace is in southeastern Mars. I believe you work at one of the mining
+      facilities, though not as a miner\u2014you are an engineer. Your home is in
+      Oslo, Norway. You normally take Route 4, presumably to avoid the traffic."
+    action: 0
+  - speaker: {fileID: 11400000, guid: 311660320f967494fa1820da4b70b065, type: 2}
+    text: There are no wormholes along that route; the nearest one is approximately
+      1562 light-years away. And yet... there is no doubt that you've travelled through
+      time. My theory is that you carry the TT gene. However, I cannot explain how
+      you managed to get here without a time machine.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "Wow, that\u2019s impressive. Uhm yes all the information you say are correct.
+      But how can I be a time traveler? My parents are just normal."
+    action: 0
+  - speaker: {fileID: 11400000, guid: 311660320f967494fa1820da4b70b065, type: 2}
+    text: Not all carriers of the TT gene are aware that they are time travellers.
+      In fact, most of them never travel through time at all. Even so, arriving here
+      without a time machine should be impossible. When we're finished here, would
+      you mind if I examined your ship? We'll also need to analyse your DNA. If you
+      don't mind, may I take a single strand of your hair?
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "Of course, I\u2019m sorry I\u2019m stunned right now. You are amazing,
+      you are the most amazing thing that has ever happened to me since I\u2019ve
+      got here. I thought all of the time travellers were jerks. Thank you."
+    action: 0
+  - speaker: {fileID: 11400000, guid: 311660320f967494fa1820da4b70b065, type: 2}
+    text: Please, don't mention it. It's my job, after all. And I'm certain you'd
+      like those people if you got to know them. They simply hold different views.
+      You could very well have been one of them.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "Ahh I still can\u2019t believe it, there could be different reasons."
+    action: 0
+  - speaker: {fileID: 11400000, guid: 311660320f967494fa1820da4b70b065, type: 2}
+    text: Perhaps. But it's the most reasonable explanation. I really must be going.
+      I'll see you both later when the results come.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: See you later.
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Byee.
+    action: 0
+  - speaker: {fileID: 11400000, guid: 311660320f967494fa1820da4b70b065, type: 2}
+    text: 
+    action: 2
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Ahh, finally someone with sense. I am really happy to go back to my home.
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Do you really hate me like that?
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "No no, maybe but no. I just miss my life. I feel trapped and can\u2019t
+      feel safe here."
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Ohh, is that about me?
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: "No, no. Totally not. I\u2019m glad you are here."
+    action: 0
+  - speaker: {fileID: 11400000, guid: e1075788e562aad4bbff0ae3dfaa43e7, type: 2}
+    text: Aww, you like me.
+    action: 0
+  - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
+    text: Shut up.
+    action: 3
