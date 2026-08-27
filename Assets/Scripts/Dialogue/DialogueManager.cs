@@ -20,11 +20,6 @@ public class DialogueManager : MonoBehaviour
     void Start()
 {
     cocktailPanel.SetActive(false);
-
-    if (dialogue != null)
-    {
-        StartDialogue(dialogue);
-    }
 }
 
     public void StartDialogue(DialogueData newDialogue)
