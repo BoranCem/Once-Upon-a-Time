@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour
 
     private int index = 0;
 
+    public GameManager gameManager;
+    
     void Start()
 {
     cocktailPanel.SetActive(false);
@@ -63,6 +65,14 @@ public class DialogueManager : MonoBehaviour
             OpenCocktailPanel();
 
             break;
+
+
+        case DialogueAction.EndDay:
+
+            gameManager.EndDay();
+
+            break;
+
 
         default:
 
