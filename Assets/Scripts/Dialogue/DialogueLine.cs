@@ -10,4 +10,6 @@ public class DialogueLine
     public string text;
 
     public DialogueAction action;
+
+    public RecipeData expectedRecipe;
 }

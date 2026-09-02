@@ -422,6 +422,7 @@ MonoBehaviour:
   dialogueText: {fileID: 747532422}
   dialogue: {fileID: 11400000, guid: 9a60ec0e05a0a5d45a821577cbd634b5, type: 2}
   cocktailPanel: {fileID: 1885664532}
+  gameManager: {fileID: 1885155732}
 --- !u!4 &60588574
 Transform:
   m_ObjectHideFlags: 0
@@ -2164,6 +2165,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627192236}
   m_CullTransparentMesh: 1
+--- !u!1 &1885155731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1885155733}
+  - component: {fileID: 1885155732}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1885155732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885155731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7826bd8feaf358c43986dbcc84d84b7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  dialogueManager: {fileID: 60588573}
+  days:
+  - {fileID: 11400000, guid: 9a60ec0e05a0a5d45a821577cbd634b5, type: 2}
+  - {fileID: 11400000, guid: 9ef29e7eb92b2044098e5e89c8dbb755, type: 2}
+--- !u!4 &1885155733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885155731}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 882.7595, y: 240.17523, z: 151.10278}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1885664532
 GameObject:
   m_ObjectHideFlags: 0
@@ -2468,3 +2517,4 @@ SceneRoots:
   - {fileID: 1368984047}
   - {fileID: 548656088}
   - {fileID: 60588574}
+  - {fileID: 1885155733}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50dafde6c9f23245894852da69c3b3e, type: 3}
   m_Name: CHR_Layla
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
-  characterName: 
+  characterName: Layla
   portrait: {fileID: 0}
-  nameColor: {r: 1, g: 1, b: 1, a: 1}
+  nameColor: {r: 0.41745055, g: 0.014017452, b: 0.4245283, a: 1}
