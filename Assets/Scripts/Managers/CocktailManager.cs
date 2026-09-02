@@ -78,22 +78,36 @@ public void MixDrink()
 
     RecipeData recipe = FindRecipe();
 
-float strength = CalculateStrength();
-string strengthLevel = GetStrengthLevel(strength);
+    float sweetness = CalculateProperty(i => i.sweetness);
+    float sourness = CalculateProperty(i => i.sourness);
+    float bitterness = CalculateProperty(i => i.bitterness);
+    float strength = CalculateProperty(i => i.strength);
+    float freshness = CalculateProperty(i => i.freshness);
 
-Debug.Log("Strength: " + strength);
-Debug.Log("Strength Level: " + strengthLevel);
+    PropertyLevel sweetnessLevel = GetPropertyLevel(sweetness);
+    PropertyLevel sournessLevel = GetPropertyLevel(sourness);
+    PropertyLevel bitternessLevel = GetPropertyLevel(bitterness);
+    PropertyLevel strengthLevel = GetPropertyLevel(strength);
+    PropertyLevel freshnessLevel = GetPropertyLevel(freshness);
 
-if (recipe != null)
-{
-    Debug.Log("Cocktail Created: " + recipe.recipeName);
-}
-else
-{
-    Debug.Log("Unknown Cocktail");
-}
+    Debug.Log("----- Drink Properties -----");
+    Debug.Log("Sweetness: " + sweetness + " (" + sweetnessLevel + ")");
+    Debug.Log("Sourness: " + sourness + " (" + sournessLevel + ")");
+    Debug.Log("Bitterness: " + bitterness + " (" + bitternessLevel + ")");
+    Debug.Log("Strength: " + strength + " (" + strengthLevel + ")");
+    Debug.Log("Freshness: " + freshness + " (" + freshnessLevel + ")");
+
+    if (recipe != null)
+    {
+        Debug.Log("Cocktail Created: " + recipe.recipeName);
+    }
+    else
+    {
+        Debug.Log("Unknown Cocktail");
+    }
 
     ClearSelection();
+
     dialogueManager.CloseCocktailPanel();
     dialogueManager.ContinueDialogue();
 }
@@ -113,22 +127,22 @@ private RecipeData FindRecipe()
     return null;
 }
 
-private float CalculateStrength()
+private float CalculateProperty(System.Func<IngredientData, int> selector)
 {
-    return selectedIngredients[0].strength * 0.60f
-         + selectedIngredients[1].strength * 0.25f
-         + selectedIngredients[2].strength * 0.15f;
+    return selector(selectedIngredients[0]) * 0.60f
+         + selector(selectedIngredients[1]) * 0.25f
+         + selector(selectedIngredients[2]) * 0.15f;
 }
 
-private string GetStrengthLevel(float strength)
+private PropertyLevel GetPropertyLevel(float value)
 {
-    if (strength <= 3f)
-        return "Light";
+    if (value <= 3f)
+        return PropertyLevel.Low;
 
-    if (strength < 7f)
-        return "Medium";
+    if (value < 7f)
+        return PropertyLevel.Medium;
 
-    return "Strong";
+    return PropertyLevel.High;
 }
 
 public void ClearSelection()
