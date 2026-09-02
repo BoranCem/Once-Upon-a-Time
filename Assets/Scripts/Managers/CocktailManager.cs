@@ -78,14 +78,20 @@ public void MixDrink()
 
     RecipeData recipe = FindRecipe();
 
-    if (recipe != null)
-    {
-        Debug.Log("Cocktail Created: " + recipe.recipeName);
-    }
-    else
-    {
-        Debug.Log("Unknown Cocktail");
-    }
+float strength = CalculateStrength();
+string strengthLevel = GetStrengthLevel(strength);
+
+Debug.Log("Strength: " + strength);
+Debug.Log("Strength Level: " + strengthLevel);
+
+if (recipe != null)
+{
+    Debug.Log("Cocktail Created: " + recipe.recipeName);
+}
+else
+{
+    Debug.Log("Unknown Cocktail");
+}
 
     ClearSelection();
     dialogueManager.CloseCocktailPanel();
@@ -105,6 +111,24 @@ private RecipeData FindRecipe()
     }
 
     return null;
+}
+
+private float CalculateStrength()
+{
+    return selectedIngredients[0].strength * 0.60f
+         + selectedIngredients[1].strength * 0.25f
+         + selectedIngredients[2].strength * 0.15f;
+}
+
+private string GetStrengthLevel(float strength)
+{
+    if (strength <= 3f)
+        return "Light";
+
+    if (strength < 7f)
+        return "Medium";
+
+    return "Strong";
 }
 
 public void ClearSelection()
