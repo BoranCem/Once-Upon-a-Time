@@ -1,6 +1,13 @@
 using System;
 using UnityEngine;
 
+public enum PropertyLevel
+{
+    Low,
+    Medium,
+    High
+}
+
 [Serializable]
 public class DialogueLine
 {
@@ -11,5 +18,10 @@ public class DialogueLine
 
     public DialogueAction action;
 
-    public RecipeData expectedRecipe;
+    [Header("Customer Drink Requirements")]
+    public PropertyLevel requiredSweetness;
+    public PropertyLevel requiredSourness;
+    public PropertyLevel requiredBitterness;
+    public PropertyLevel requiredStrength;
+    public PropertyLevel requiredFreshness;
 }
