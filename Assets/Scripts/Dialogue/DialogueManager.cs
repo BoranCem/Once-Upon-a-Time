@@ -16,11 +16,19 @@ public class DialogueManager : MonoBehaviour
     private int index = 0;
 
     public GameManager gameManager;
-    
+
+    public DialogueLine CurrentLine
+    {
+        get
+        {
+            return dialogue.lines[index];
+        }
+    }
+
     void Start()
-{
-    cocktailPanel.SetActive(false);
-}
+    {
+        cocktailPanel.SetActive(false);
+    }
 
     public void StartDialogue(DialogueData newDialogue)
     {
@@ -39,67 +47,65 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void NextDialogue()
-{
-    index++;
-
-    if (index >= dialogue.lines.Length)
     {
-        Debug.Log("Dialogue Finished!");
-        return;
+        index++;
+
+        if (index >= dialogue.lines.Length)
+        {
+            Debug.Log("Dialogue Finished!");
+            return;
+        }
+
+        DialogueLine currentLine = dialogue.lines[index];
+
+        switch (currentLine.action)
+        {
+            case DialogueAction.WaitForCocktail:
+
+                dialogueText.text = "";
+                characterName.text = "";
+
+                OpenCocktailPanel();
+
+                break;
+
+            case DialogueAction.EndDay:
+
+                gameManager.EndDay();
+
+                break;
+
+            default:
+
+                ShowDialogue();
+
+                break;
+        }
     }
 
-    DialogueLine currentLine = dialogue.lines[index];
-
-    switch (currentLine.action)
+    public void OpenCocktailPanel()
     {
-        case DialogueAction.WaitForCocktail:
+        cocktailPanel.SetActive(true);
 
-            dialogueText.text = "";
-            characterName.text = "";
-
-            OpenCocktailPanel();
-
-            break;
-
-
-        case DialogueAction.EndDay:
-
-            gameManager.EndDay();
-
-            break;
-
-
-        default:
-
-            ShowDialogue();
-
-            break;
-    }
-}
-public void OpenCocktailPanel()
-{
-    cocktailPanel.SetActive(true);
-
-    RectTransform panel = cocktailPanel.GetComponent<RectTransform>();
-    panel.anchoredPosition = Vector2.zero;
-}
-
-public void ContinueDialogue()
-{
-    index++;
-
-    if (index >= dialogue.lines.Length)
-    {
-        Debug.Log("Dialogue Finished!");
-        return;
+        RectTransform panel = cocktailPanel.GetComponent<RectTransform>();
+        panel.anchoredPosition = Vector2.zero;
     }
 
-    ShowDialogue();
-}
+    public void ContinueDialogue()
+    {
+        index++;
 
-public void CloseCocktailPanel()
-{
-    cocktailPanel.SetActive(false);
-}
+        if (index >= dialogue.lines.Length)
+        {
+            Debug.Log("Dialogue Finished!");
+            return;
+        }
 
+        ShowDialogue();
+    }
+
+    public void CloseCocktailPanel()
+    {
+        cocktailPanel.SetActive(false);
+    }
 }
