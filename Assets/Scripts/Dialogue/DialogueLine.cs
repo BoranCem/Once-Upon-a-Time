@@ -3,6 +3,7 @@ using UnityEngine;
 
 public enum PropertyLevel
 {
+    None,
     Low,
     Medium,
     High
