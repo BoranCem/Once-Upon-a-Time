@@ -20,6 +20,9 @@ public class CocktailManager : MonoBehaviour
     [Header("Dialogue")]
     public DialogueManager dialogueManager;
 
+    [Header("Cocktail Book")]
+    public CocktailBookManager cocktailBookManager;
+
     public IngredientButton ingredientButtonPrefab;
 
     private List<IngredientData> selectedIngredients = new();
@@ -108,13 +111,15 @@ public class CocktailManager : MonoBehaviour
         Debug.Log("Customer Requirements Match: " + propertiesMatch);
 
         if (recipe != null)
-        {
-            Debug.Log("Cocktail Created: " + recipe.recipeName);
-        }
-        else
-        {
-            Debug.Log("Unknown Cocktail");
-        }
+{
+    Debug.Log("Cocktail Created: " + recipe.recipeName);
+
+    cocktailBookManager.DiscoverRecipe(recipe);
+}
+else
+{
+    Debug.Log("Unknown Cocktail");
+}
 
         if (propertiesMatch)
         {
