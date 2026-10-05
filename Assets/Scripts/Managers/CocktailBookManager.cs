@@ -3,7 +3,14 @@ using UnityEngine;
 
 public class CocktailBookManager : MonoBehaviour
 {
+    [Header("Recipes")]
+    public List<RecipeData> allRecipes = new();
+
     public List<RecipeData> discoveredRecipes = new();
+
+    [Header("UI")]
+    public Transform recipeGrid;
+    public CocktailBookEntry recipeEntryPrefab;
 
     public void DiscoverRecipe(RecipeData recipe)
     {
@@ -21,5 +28,26 @@ public class CocktailBookManager : MonoBehaviour
     public bool IsDiscovered(RecipeData recipe)
     {
         return discoveredRecipes.Contains(recipe);
+    }
+
+    public void OpenBook()
+    {
+        CreateRecipeEntries();
+    }
+
+    private void CreateRecipeEntries()
+    {
+        foreach (Transform child in recipeGrid)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (RecipeData recipe in allRecipes)
+        {
+            CocktailBookEntry entry =
+                Instantiate(recipeEntryPrefab, recipeGrid);
+
+            entry.Setup(recipe, IsDiscovered(recipe));
+        }
     }
 }
