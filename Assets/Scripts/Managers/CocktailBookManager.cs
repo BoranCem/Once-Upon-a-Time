@@ -9,6 +9,7 @@ public class CocktailBookManager : MonoBehaviour
     public List<RecipeData> discoveredRecipes = new();
 
     [Header("UI")]
+    public GameObject bookPanel;
     public Transform recipeGrid;
     public CocktailBookEntry recipeEntryPrefab;
 
@@ -32,7 +33,14 @@ public class CocktailBookManager : MonoBehaviour
 
     public void OpenBook()
     {
+        bookPanel.SetActive(true);
+
         CreateRecipeEntries();
+    }
+
+    public void CloseBook()
+    {
+        bookPanel.SetActive(false);
     }
 
     private void CreateRecipeEntries()
