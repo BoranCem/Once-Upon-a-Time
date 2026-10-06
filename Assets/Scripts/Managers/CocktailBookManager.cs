@@ -8,10 +8,13 @@ public class CocktailBookManager : MonoBehaviour
 
     public List<RecipeData> discoveredRecipes = new();
 
-    [Header("UI")]
+    [Header("Book UI")]
     public GameObject bookPanel;
     public Transform recipeGrid;
     public CocktailBookEntry recipeEntryPrefab;
+
+    [Header("Recipe Details")]
+    public CocktailBookDetail detailPanel;
 
     public void DiscoverRecipe(RecipeData recipe)
     {
@@ -36,6 +39,11 @@ public class CocktailBookManager : MonoBehaviour
         bookPanel.SetActive(true);
 
         CreateRecipeEntries();
+
+        if (detailPanel != null)
+        {
+            detailPanel.ShowUnknown();
+        }
     }
 
     public void CloseBook()
@@ -55,7 +63,25 @@ public class CocktailBookManager : MonoBehaviour
             CocktailBookEntry entry =
                 Instantiate(recipeEntryPrefab, recipeGrid);
 
-            entry.Setup(recipe, IsDiscovered(recipe));
+            entry.Setup(
+                recipe,
+                IsDiscovered(recipe),
+                this
+            );
         }
+    }
+
+    public void SelectRecipe(RecipeData recipe)
+    {
+        if (recipe == null)
+            return;
+
+        if (!IsDiscovered(recipe))
+        {
+            detailPanel.ShowUnknown();
+            return;
+        }
+
+        detailPanel.ShowRecipe(recipe);
     }
 }

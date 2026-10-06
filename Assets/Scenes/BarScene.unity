@@ -2358,6 +2358,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectedSlot
   ingredientName: {fileID: 611856978}
+--- !u!1 &960099804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 960099805}
+  m_Layer: 5
+  m_Name: RecipeEntry
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &960099805
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960099804}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1613596013}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &973627000
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,8 +2575,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 337893bffd98e964d9f6c3e03a9ced75, type: 2}
   discoveredRecipes: []
   bookPanel: {fileID: 1613596012}
-  recipeGrid: {fileID: 0}
-  recipeEntryPrefab: {fileID: 0}
+  recipeGrid: {fileID: 1091573350}
+  recipeEntryPrefab: {fileID: -2778501355886783677, guid: b534e4a6ba662cd4a8424732eda28741, type: 3}
+  detailPanel: {fileID: 1138015556}
 --- !u!4 &1089809001
 Transform:
   m_ObjectHideFlags: 0
@@ -2589,7 +2625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2, y: 0.0001577022}
+  m_AnchoredPosition: {x: -2, y: 0.00044481154}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1138015552
@@ -2603,6 +2639,7 @@ GameObject:
   - component: {fileID: 1138015553}
   - component: {fileID: 1138015555}
   - component: {fileID: 1138015554}
+  - component: {fileID: 1138015556}
   m_Layer: 5
   m_Name: RightPanel
   m_TagString: Untagged
@@ -2671,6 +2708,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138015552}
   m_CullTransparentMesh: 1
+--- !u!114 &1138015556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138015552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d14ed547221b8b4ea4fb66000c2b3ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CocktailBookDetail
+  cocktailImage: {fileID: 1909011791}
+  cocktailName: {fileID: 136691051}
+  cocktailStory: {fileID: 885633947}
+  ingredientsText: {fileID: 2078673816}
 --- !u!1 &1187058614
 GameObject:
   m_ObjectHideFlags: 0
@@ -2706,9 +2759,9 @@ RectTransform:
   m_Father: {fileID: 1495797686}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1187058616
 MonoBehaviour:
@@ -3355,7 +3408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1613596013
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3372,6 +3425,7 @@ RectTransform:
   - {fileID: 2070594659}
   - {fileID: 973627001}
   - {fileID: 1138015553}
+  - {fileID: 960099805}
   m_Father: {fileID: 1368984047}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
@@ -3787,7 +3841,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -794, y: -277}
+  m_AnchoredPosition: {x: -781, y: -187}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1971548139
@@ -4145,7 +4199,7 @@ RectTransform:
   m_Father: {fileID: 35891898}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
