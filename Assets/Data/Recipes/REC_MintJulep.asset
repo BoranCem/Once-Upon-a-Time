@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: REC_MintJulep
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: Mint Julep
+  cocktailIcon: {fileID: 0}
+  cocktailStory: The Mint Julep has roots in the American South dating back to the
+    18th century. Early versions could be made with different spirits, but bourbon
+    eventually became closely associated with the drink. Today, the Mint Julep is
+    especially famous because of its connection to the Kentucky Derby.
   primary: {fileID: 11400000, guid: 74a5a40157950344bac5a6d5f5f0a78d, type: 2}
   secondary: {fileID: 11400000, guid: b68e53506ac1a594a97ed6bab0ebee30, type: 2}
   third: {fileID: 11400000, guid: 09de57ada5a534b4494a487399495ec8, type: 2}

@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: REC_SunsetMojito
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: Sunset Mojito
+  cocktailIcon: {fileID: 0}
+  cocktailStory: The Sunset Mojito can be seen as a modern interpretation of the
+    classic Mojito. Replacing rum with whisky gives the drink a deeper and warmer
+    character, while soda and mint keep it refreshing. The name reflects the contrast
+    between the rich whisky and the fresh ingredients.
   primary: {fileID: 11400000, guid: 74a5a40157950344bac5a6d5f5f0a78d, type: 2}
   secondary: {fileID: 11400000, guid: 7d7470ba343003846a4a309da217d7be, type: 2}
   third: {fileID: 11400000, guid: b68e53506ac1a594a97ed6bab0ebee30, type: 2}

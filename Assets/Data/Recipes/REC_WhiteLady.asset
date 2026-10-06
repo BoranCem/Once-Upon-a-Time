@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: REC_WhiteLady
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: White Lady
+  cocktailIcon: {fileID: 0}
+  cocktailStory: The White Lady has a history that goes back to the early 20th century.
+    Harry MacElhone created an early version in 1919, although it was quite different
+    from the drink we know today. The modern combination of gin, orange liqueur,
+    and lemon became established during the 1920s and was later popularized by Harry
+    Craddock.
   primary: {fileID: 11400000, guid: ec1b45e61ecc52c4da62be3716522a67, type: 2}
   secondary: {fileID: 11400000, guid: 73f77962581e1b9449fbd81bcf144790, type: 2}
   third: {fileID: 11400000, guid: c6d4f5e1158f5eb47bf644a64fc050fa, type: 2}

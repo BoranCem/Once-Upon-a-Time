@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Rec_Mojito
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: Mojito
+  cocktailIcon: {fileID: 0}
+  cocktailStory: The Mojito originated in Cuba, although its exact beginnings are
+    surrounded by several stories. Early versions were made to make harsh spirits
+    easier to drink by combining them with lime, mint, and sweeteners. Over time,
+    the Mojito became one of Cuba's most famous cocktails.
   primary: {fileID: 11400000, guid: 76a04cb5dfd95ec43ae908f03fba49df, type: 2}
   secondary: {fileID: 11400000, guid: c6d4f5e1158f5eb47bf644a64fc050fa, type: 2}
   third: {fileID: 11400000, guid: b68e53506ac1a594a97ed6bab0ebee30, type: 2}

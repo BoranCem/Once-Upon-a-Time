@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Rec_DarkRumBlackRussian
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: Dark Rum Black Russian
+  cocktailIcon: {fileID: 0}
+  cocktailStory: The Black Russian was created in Brussels in 1949 by bartender Gustave
+    Tops. Its simple combination of vodka and coffee liqueur became popular around
+    the world. The Dark Rum Black Russian replaces vodka with dark rum, giving the
+    drink a deeper and richer character.
   primary: {fileID: 11400000, guid: 76a04cb5dfd95ec43ae908f03fba49df, type: 2}
   secondary: {fileID: 11400000, guid: 4ca3bf41c56c3c74f9f979797774139d, type: 2}
   third: {fileID: 11400000, guid: 09de57ada5a534b4494a487399495ec8, type: 2}

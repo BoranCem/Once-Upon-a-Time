@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Rec_BloodyMary
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: Bloody Mary
+  cocktailIcon: {fileID: 0}
+  cocktailStory: The Bloody Mary dates back to the 1920s and is often associated
+    with Fernand Petiot, a bartender working at the New York Bar in Paris. Over time,
+    the drink evolved into many different versions and became especially famous as
+    a morning and hangover cocktail. The version in this book uses vodka, ice, and
+    orange.
   primary: {fileID: 11400000, guid: f2b20702c1badd74c946c1fa4ea65457, type: 2}
   secondary: {fileID: 11400000, guid: 09de57ada5a534b4494a487399495ec8, type: 2}
   third: {fileID: 11400000, guid: 73f77962581e1b9449fbd81bcf144790, type: 2}

@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Rec_GinTonic
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: Gin Tonic
+  cocktailIcon: {fileID: 0}
+  cocktailStory: The Gin & Tonic has its roots in the British presence in India during
+    the 19th century. Tonic water contained quinine, which was used against malaria
+    but had a very bitter taste. Gin and other ingredients were added to make it
+    easier to drink. What began as a practical combination eventually became a classic
+    cocktail.
   primary: {fileID: 11400000, guid: ec1b45e61ecc52c4da62be3716522a67, type: 2}
   secondary: {fileID: 11400000, guid: 4baecac81767c274ea9d6384a4382910, type: 2}
   third: {fileID: 11400000, guid: c6d4f5e1158f5eb47bf644a64fc050fa, type: 2}

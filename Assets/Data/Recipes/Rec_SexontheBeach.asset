@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Rec_SexontheBeach
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: Sex on the Beach
+  cocktailIcon: {fileID: 0}
+  cocktailStory: The exact origin of the Sex on the Beach is uncertain. It became
+    popular in the United States during the 1980s and quickly gained attention for
+    its fruity flavor and colorful appearance. Its playful name and easy-drinking
+    character helped make it a popular bar cocktail.
   primary: {fileID: 11400000, guid: f2b20702c1badd74c946c1fa4ea65457, type: 2}
   secondary: {fileID: 11400000, guid: 73f77962581e1b9449fbd81bcf144790, type: 2}
   third: {fileID: 11400000, guid: c6d4f5e1158f5eb47bf644a64fc050fa, type: 2}

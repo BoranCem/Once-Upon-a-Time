@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: REC_MexicanMocha
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: Mexican Mocha
+  cocktailIcon: {fileID: 0}
+  cocktailStory: The Mexican Mocha does not have a single established origin. It
+    can be viewed as a modern cocktail inspired by Mexican flavors, combining tequila
+    with the rich taste of coffee. The ice helps soften the strong flavors and makes
+    the drink easier to enjoy.
   primary: {fileID: 11400000, guid: 2b7916f9027eddb4fb7268e945664af3, type: 2}
   secondary: {fileID: 11400000, guid: 4ca3bf41c56c3c74f9f979797774139d, type: 2}
   third: {fileID: 11400000, guid: 09de57ada5a534b4494a487399495ec8, type: 2}

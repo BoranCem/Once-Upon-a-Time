@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Rec_YellowSun
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: Yellow sun
+  cocktailIcon: {fileID: 0}
+  cocktailStory: There is no widely established historical origin for the Yellow
+    Sun. It can be seen as a modern combination of rum, vodka, and lemon. Its bright
+    character and citrus flavor give the drink its sunny name.
   primary: {fileID: 11400000, guid: 76a04cb5dfd95ec43ae908f03fba49df, type: 2}
   secondary: {fileID: 11400000, guid: c6d4f5e1158f5eb47bf644a64fc050fa, type: 2}
   third: {fileID: 11400000, guid: f2b20702c1badd74c946c1fa4ea65457, type: 2}

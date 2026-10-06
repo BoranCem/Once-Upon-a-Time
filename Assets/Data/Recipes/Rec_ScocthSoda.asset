@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Rec_ScocthSoda
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: Scotch and Soda
+  cocktailIcon: {fileID: 0}
+  cocktailStory: Scotch & Soda is less a complicated recipe and more a classic way
+    of enjoying whisky. Its exact creator is unknown. The combination of Scotch whisky
+    and soda became popular because it allowed the character of the whisky to remain
+    while making the drink lighter and easier to enjoy.
   primary: {fileID: 11400000, guid: 74a5a40157950344bac5a6d5f5f0a78d, type: 2}
   secondary: {fileID: 11400000, guid: 7d7470ba343003846a4a309da217d7be, type: 2}
   third: {fileID: 11400000, guid: 09de57ada5a534b4494a487399495ec8, type: 2}

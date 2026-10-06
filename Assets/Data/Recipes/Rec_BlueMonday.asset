@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: Rec_BlueMonday
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: Blue Monday
+  cocktailIcon: {fileID: 0}
+  cocktailStory: "The Blue Monday does not have a universally accepted origin story.
+    It is a modern-style cocktail that combines the herbal character of gin with
+    the bright color and citrus notes of blue cura\xE7ao. Its striking blue appearance
+    is one of its defining features."
   primary: {fileID: 11400000, guid: ec1b45e61ecc52c4da62be3716522a67, type: 2}
   secondary: {fileID: 11400000, guid: 7d7470ba343003846a4a309da217d7be, type: 2}
   third: {fileID: 11400000, guid: ee821f5ea7436f241803bbbb5e082b9b, type: 2}

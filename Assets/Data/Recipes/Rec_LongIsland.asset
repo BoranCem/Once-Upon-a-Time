@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Rec_LongIsland
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: Long Island
+  cocktailIcon: {fileID: 0}
+  cocktailStory: "The Long Island Iced Tea is most commonly associated with the 1970s
+    and Robert \u201CRosebud\u201D Butt, a bartender at the Oak Beach Inn in New
+    York. The drink became famous for combining several spirits in a single cocktail.
+    Despite its name, traditional versions contain no iced tea; the name comes from
+    its tea-like appearance."
   primary: {fileID: 11400000, guid: 76a04cb5dfd95ec43ae908f03fba49df, type: 2}
   secondary: {fileID: 11400000, guid: 73f77962581e1b9449fbd81bcf144790, type: 2}
   third: {fileID: 11400000, guid: 2b7916f9027eddb4fb7268e945664af3, type: 2}

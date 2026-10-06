@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: REC_TequillaSunrise
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: Tequilla Sunrise
+  cocktailIcon: {fileID: 0}
+  cocktailStory: The Tequila Sunrise has existed in different forms, but the modern
+    version became famous in California during the early 1970s. Bartenders Bobby
+    Lozoff and Billy Rice helped popularize the drink at the Trident bar. Its colorful
+    sunrise-like appearance later made it famous around the world.
   primary: {fileID: 11400000, guid: 2b7916f9027eddb4fb7268e945664af3, type: 2}
   secondary: {fileID: 11400000, guid: 73f77962581e1b9449fbd81bcf144790, type: 2}
   third: {fileID: 11400000, guid: 09de57ada5a534b4494a487399495ec8, type: 2}

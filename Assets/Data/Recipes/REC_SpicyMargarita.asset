@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: REC_SpicyMargarita
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: Spicy Margarita
+  cocktailIcon: {fileID: 0}
+  cocktailStory: The exact origin of the Margarita remains uncertain, but the cocktail
+    became popular in Mexico and the United States during the 20th century. The Spicy
+    Margarita is a modern variation that adds chili or other spicy flavors to the
+    classic Margarita. Its combination of heat, citrus, and tequila has made it a
+    popular modern cocktail.
   primary: {fileID: 11400000, guid: 2b7916f9027eddb4fb7268e945664af3, type: 2}
   secondary: {fileID: 11400000, guid: c6d4f5e1158f5eb47bf644a64fc050fa, type: 2}
   third: {fileID: 11400000, guid: 73f77962581e1b9449fbd81bcf144790, type: 2}

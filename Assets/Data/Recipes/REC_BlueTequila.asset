@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: REC_BlueTequila
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: Blue Tequila
+  cocktailIcon: {fileID: 0}
+  cocktailStory: "Blue Tequila has no widely established historical origin. It is
+    a modern-style cocktail combining tequila with blue cura\xE7ao and soda. Its
+    bright blue color gives it a distinctive appearance and separates it from more
+    traditional tequila cocktails."
   primary: {fileID: 11400000, guid: 2b7916f9027eddb4fb7268e945664af3, type: 2}
   secondary: {fileID: 11400000, guid: ee821f5ea7436f241803bbbb5e082b9b, type: 2}
   third: {fileID: 11400000, guid: 7d7470ba343003846a4a309da217d7be, type: 2}

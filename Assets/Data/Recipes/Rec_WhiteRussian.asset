@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Rec_WhiteRussian
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: White Russian
+  cocktailIcon: {fileID: 0}
+  cocktailStory: The White Russian developed from the earlier Black Russian, which
+    was created in Brussels in 1949 by bartender Gustave Tops. The original drink
+    combined vodka with coffee liqueur, while the White Russian later became known
+    for the addition of cream. Despite its name, the cocktail was not created in
+    Russia.
   primary: {fileID: 11400000, guid: f2b20702c1badd74c946c1fa4ea65457, type: 2}
   secondary: {fileID: 11400000, guid: 4ca3bf41c56c3c74f9f979797774139d, type: 2}
   third: {fileID: 11400000, guid: 09de57ada5a534b4494a487399495ec8, type: 2}

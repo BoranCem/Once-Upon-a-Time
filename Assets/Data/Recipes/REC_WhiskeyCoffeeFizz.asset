@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: REC_WhiskeyCoffeeFizz
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: Whisky Coffee Fizz
+  cocktailIcon: {fileID: 0}
+  cocktailStory: The Whisky Coffee Fizz has no established classic origin. It combines
+    the rich flavors of whisky and coffee liqueur with soda to create a lighter and
+    more refreshing drink. It can be seen as a modern experiment that brings together
+    the warmth of whisky and the bitterness of coffee.
   primary: {fileID: 11400000, guid: 74a5a40157950344bac5a6d5f5f0a78d, type: 2}
   secondary: {fileID: 11400000, guid: 4ca3bf41c56c3c74f9f979797774139d, type: 2}
   third: {fileID: 11400000, guid: 7d7470ba343003846a4a309da217d7be, type: 2}

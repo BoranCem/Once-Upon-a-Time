@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RecipeData
   recipeName: Blue Daiquiri
   cocktailIcon: {fileID: 0}
-  cocktailStory: asd
+  cocktailStory: "The Daiquiri originated in Cuba in the late 19th century. One popular
+    story credits American engineer Jennings Cox with creating the drink using rum,
+    lime, and sugar. The Blue Daiquiri is a modern variation that adds blue cura\xE7ao,
+    giving the classic drink a bright blue appearance."
   primary: {fileID: 11400000, guid: 76a04cb5dfd95ec43ae908f03fba49df, type: 2}
   secondary: {fileID: 11400000, guid: ee821f5ea7436f241803bbbb5e082b9b, type: 2}
   third: {fileID: 11400000, guid: c6d4f5e1158f5eb47bf644a64fc050fa, type: 2}
