@@ -17,17 +17,19 @@ public class CocktailBookManager : MonoBehaviour
     public CocktailBookDetail detailPanel;
 
     public void DiscoverRecipe(RecipeData recipe)
+{
+    if (recipe == null)
+        return;
+
+    if (!discoveredRecipes.Contains(recipe))
     {
-        if (recipe == null)
-            return;
+        discoveredRecipes.Add(recipe);
 
-        if (!discoveredRecipes.Contains(recipe))
-        {
-            discoveredRecipes.Add(recipe);
+        Debug.Log("Cocktail discovered: " + recipe.recipeName);
 
-            Debug.Log("Cocktail discovered: " + recipe.recipeName);
-        }
+        CreateRecipeEntries();
     }
+}
 
     public bool IsDiscovered(RecipeData recipe)
     {

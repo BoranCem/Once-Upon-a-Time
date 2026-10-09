@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64671bcd54f20ac46822b1c909f0f5ab, type: 3}
   m_Name: ING_Tequila
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
-  ingredientName: Requila
+  ingredientName: Tequila
   icon: {fileID: 0}
   sweetness: 0
   sourness: 1
