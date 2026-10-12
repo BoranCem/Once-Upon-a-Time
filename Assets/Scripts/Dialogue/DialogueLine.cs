@@ -21,8 +21,9 @@ public class DialogueLine
 
     [Header("Customer Drink Requirements")]
     public PropertyLevel requiredSweetness;
-    public PropertyLevel requiredSourness;
     public PropertyLevel requiredBitterness;
     public PropertyLevel requiredStrength;
     public PropertyLevel requiredFreshness;
+    public PropertyLevel requiredSourness;
+
 }
