@@ -23,6 +23,9 @@ public class CocktailManager : MonoBehaviour
     [Header("Cocktail Book")]
     public CocktailBookManager cocktailBookManager;
 
+    [Header("Rush Mode")]
+    public RushModeManager rushModeManager;
+
     public IngredientButton ingredientButtonPrefab;
 
     private List<IngredientData> selectedIngredients = new();
@@ -93,13 +96,28 @@ public class CocktailManager : MonoBehaviour
         PropertyLevel strengthLevel = GetPropertyLevel(strength);
         PropertyLevel freshnessLevel = GetPropertyLevel(freshness);
 
-        bool propertiesMatch = CheckCustomerRequirements(
-            sweetnessLevel,
-            sournessLevel,
-            bitternessLevel,
-            strengthLevel,
-            freshnessLevel
-        );
+        bool propertiesMatch;
+
+if (rushModeManager != null)
+{
+    propertiesMatch = rushModeManager.CheckRequirements(
+        sweetnessLevel,
+        sournessLevel,
+        bitternessLevel,
+        strengthLevel,
+        freshnessLevel
+    );
+}
+else
+{
+    propertiesMatch = CheckCustomerRequirements(
+        sweetnessLevel,
+        sournessLevel,
+        bitternessLevel,
+        strengthLevel,
+        freshnessLevel
+    );
+}
 
         Debug.Log("----- Drink Properties -----");
         Debug.Log("Sweetness: " + sweetness + " (" + sweetnessLevel + ")");
@@ -132,8 +150,14 @@ else
 
         ClearSelection();
 
-        dialogueManager.CloseCocktailPanel();
-        dialogueManager.ContinueDialogue();
+if (rushModeManager != null)
+{
+    rushModeManager.SubmitDrink(propertiesMatch);
+    return;
+}
+
+dialogueManager.CloseCocktailPanel();
+dialogueManager.ContinueDialogue();
     }
 
     private RecipeData FindRecipe()

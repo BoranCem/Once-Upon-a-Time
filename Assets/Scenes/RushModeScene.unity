@@ -4852,6 +4852,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 337893bffd98e964d9f6c3e03a9ced75, type: 2}
   dialogueManager: {fileID: 60588573}
   cocktailBookManager: {fileID: 1089809000}
+  rushModeManager: {fileID: 1786540266}
   ingredientButtonPrefab: {fileID: 7890575843003848139, guid: b4fc6ef3f3a86a746b1962e5e94d0c59, type: 3}
 --- !u!1 &2070594658
 GameObject:
