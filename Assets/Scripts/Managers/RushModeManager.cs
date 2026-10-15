@@ -17,6 +17,9 @@ public class RushModeManager : MonoBehaviour
     public GameObject gameOverPanel;
     public TMP_Text finalScoreText;
 
+    [Header("Cocktail UI")]
+public GameObject cocktailPanel;
+
     [Header("Current Order")]
     public PropertyLevel requiredSweetness;
     public PropertyLevel requiredSourness;
@@ -29,19 +32,22 @@ public class RushModeManager : MonoBehaviour
     private int completedOrders;
     private bool gameRunning;
 
-    private void Start()
-    {
-        remainingTime = timeLimit;
-        score = 0;
-        completedOrders = 0;
-        gameRunning = true;
+private void Start()
+{
+    remainingTime = timeLimit;
+    score = 0;
+    completedOrders = 0;
+    gameRunning = true;
 
-        if (gameOverPanel != null)
-            gameOverPanel.SetActive(false);
+    if (gameOverPanel != null)
+        gameOverPanel.SetActive(false);
 
-        GenerateOrder();
-        UpdateUI();
-    }
+    if (cocktailPanel != null)
+        cocktailPanel.SetActive(true);
+
+    GenerateOrder();
+    UpdateUI();
+}
 
     private void Update()
     {
