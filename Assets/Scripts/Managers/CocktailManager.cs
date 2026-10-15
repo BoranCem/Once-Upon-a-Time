@@ -243,4 +243,12 @@ dialogueManager.ContinueDialogue();
         slot2.Clear();
         slot3.Clear();
     }
+
+    
+public void ResetSelection()
+{
+    ClearSelection();
+    Debug.Log("Ingredient selection reset.");
+}
+
 }
