@@ -1910,7 +1910,7 @@ GameObject:
   - component: {fileID: 718154358}
   - component: {fileID: 718154357}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3274,8 +3274,8 @@ RectTransform:
   m_Children:
   - {fileID: 168077358}
   - {fileID: 1480743907}
-  - {fileID: 1613596013}
   - {fileID: 1885664533}
+  - {fileID: 1613596013}
   - {fileID: 1971548138}
   - {fileID: 718154356}
   m_Father: {fileID: 0}
@@ -3762,7 +3762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1613596013
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3784,7 +3784,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 1133, y: 6}
+  m_AnchoredPosition: {x: 1042, y: 6}
   m_SizeDelta: {x: 1700, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1613596014
@@ -4382,6 +4382,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 337893bffd98e964d9f6c3e03a9ced75, type: 2}
   dialogueManager: {fileID: 60588573}
   cocktailBookManager: {fileID: 1089809000}
+  rushModeManager: {fileID: 0}
   ingredientButtonPrefab: {fileID: 7890575843003848139, guid: b4fc6ef3f3a86a746b1962e5e94d0c59, type: 3}
 --- !u!1 &2070594658
 GameObject:
@@ -4553,7 +4554,7 @@ RectTransform:
   m_Father: {fileID: 35891898}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}

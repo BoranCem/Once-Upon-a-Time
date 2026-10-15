@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RushModeManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class RushModeManager : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text orderText;
     public GameObject gameOverPanel;
+    public TMP_Text finalScoreText;
 
     [Header("Current Order")]
     public PropertyLevel requiredSweetness;
@@ -55,6 +57,13 @@ public class RushModeManager : MonoBehaviour
 
             if (gameOverPanel != null)
                 gameOverPanel.SetActive(true);
+
+            if (finalScoreText != null)
+            {
+                finalScoreText.text =
+                    "Final Score: " + score +
+                    "\nOrders Completed: " + completedOrders;
+            }
         }
 
         UpdateUI();
@@ -99,15 +108,19 @@ public class RushModeManager : MonoBehaviour
                 case 0:
                     requiredSweetness = level;
                     break;
+
                 case 1:
                     requiredSourness = level;
                     break;
+
                 case 2:
                     requiredBitterness = level;
                     break;
+
                 case 3:
                     requiredStrength = level;
                     break;
+
                 case 4:
                     requiredFreshness = level;
                     break;
@@ -119,6 +132,9 @@ public class RushModeManager : MonoBehaviour
 
     private void UpdateOrderText()
     {
+        if (orderText == null)
+            return;
+
         List<string> requests = new List<string>();
 
         AddRequest(requests, "Sweetness", requiredSweetness);
@@ -197,9 +213,26 @@ public class RushModeManager : MonoBehaviour
     private void UpdateUI()
     {
         if (timerText != null)
-            timerText.text = Mathf.CeilToInt(remainingTime).ToString();
+        {
+            timerText.text =
+                Mathf.CeilToInt(remainingTime).ToString();
+        }
 
         if (scoreText != null)
+        {
             scoreText.text = "Score: " + score;
+        }
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(
+            SceneManager.GetActiveScene().buildIndex
+        );
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
