@@ -7041,6 +7041,16 @@ MonoBehaviour:
   cocktailBookManager: {fileID: 1089809000}
   rushModeManager: {fileID: 0}
   ingredientButtonPrefab: {fileID: 7890575843003848139, guid: b4fc6ef3f3a86a746b1962e5e94d0c59, type: 3}
+  sweetnessBar: {fileID: 1906455779}
+  sournessBar: {fileID: 797909016}
+  bitternessBar: {fileID: 1619711960}
+  strengthBar: {fileID: 1664153090}
+  freshnessBar: {fileID: 552290507}
+  sweetnessValue: {fileID: 804810144}
+  sournessValue: {fileID: 862319641}
+  bitternessValue: {fileID: 1791022113}
+  strengthValue: {fileID: 920645126}
+  freshnessValue: {fileID: 1212279874}
 --- !u!1 &2029710778
 GameObject:
   m_ObjectHideFlags: 0

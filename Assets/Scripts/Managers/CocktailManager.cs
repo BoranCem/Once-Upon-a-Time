@@ -1,5 +1,8 @@
+
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CocktailManager : MonoBehaviour
 {
@@ -30,9 +33,24 @@ public class CocktailManager : MonoBehaviour
 
     private List<IngredientData> selectedIngredients = new();
 
-    void Start()
+    [Header("Drink Property Bars")]
+    public Image sweetnessBar;
+    public Image sournessBar;
+    public Image bitternessBar;
+    public Image strengthBar;
+    public Image freshnessBar;
+
+    [Header("Drink Property Values")]
+    public TMP_Text sweetnessValue;
+    public TMP_Text sournessValue;
+    public TMP_Text bitternessValue;
+    public TMP_Text strengthValue;
+    public TMP_Text freshnessValue;
+
+    private void Start()
     {
         CreateIngredientButtons();
+        UpdatePropertyBars();
     }
 
     private void CreateIngredientButtons()
@@ -71,7 +89,9 @@ public class CocktailManager : MonoBehaviour
                 break;
         }
 
-        Debug.Log("Selected : " + ingredient.ingredientName);
+        UpdatePropertyBars();
+
+        Debug.Log("Selected: " + ingredient.ingredientName);
     }
 
     public void MixDrink()
@@ -98,26 +118,26 @@ public class CocktailManager : MonoBehaviour
 
         bool propertiesMatch;
 
-if (rushModeManager != null)
-{
-    propertiesMatch = rushModeManager.CheckRequirements(
-        sweetnessLevel,
-        sournessLevel,
-        bitternessLevel,
-        strengthLevel,
-        freshnessLevel
-    );
-}
-else
-{
-    propertiesMatch = CheckCustomerRequirements(
-        sweetnessLevel,
-        sournessLevel,
-        bitternessLevel,
-        strengthLevel,
-        freshnessLevel
-    );
-}
+        if (rushModeManager != null)
+        {
+            propertiesMatch = rushModeManager.CheckRequirements(
+                sweetnessLevel,
+                sournessLevel,
+                bitternessLevel,
+                strengthLevel,
+                freshnessLevel
+            );
+        }
+        else
+        {
+            propertiesMatch = CheckCustomerRequirements(
+                sweetnessLevel,
+                sournessLevel,
+                bitternessLevel,
+                strengthLevel,
+                freshnessLevel
+            );
+        }
 
         Debug.Log("----- Drink Properties -----");
         Debug.Log("Sweetness: " + sweetness + " (" + sweetnessLevel + ")");
@@ -125,19 +145,21 @@ else
         Debug.Log("Bitterness: " + bitterness + " (" + bitternessLevel + ")");
         Debug.Log("Strength: " + strength + " (" + strengthLevel + ")");
         Debug.Log("Freshness: " + freshness + " (" + freshnessLevel + ")");
-
         Debug.Log("Customer Requirements Match: " + propertiesMatch);
 
         if (recipe != null)
-{
-    Debug.Log("Cocktail Created: " + recipe.recipeName);
+        {
+            Debug.Log("Cocktail Created: " + recipe.recipeName);
 
-    cocktailBookManager.DiscoverRecipe(recipe);
-}
-else
-{
-    Debug.Log("Unknown Cocktail");
-}
+            if (cocktailBookManager != null)
+            {
+                cocktailBookManager.DiscoverRecipe(recipe);
+            }
+        }
+        else
+        {
+            Debug.Log("Unknown Cocktail");
+        }
 
         if (propertiesMatch)
         {
@@ -150,14 +172,17 @@ else
 
         ClearSelection();
 
-if (rushModeManager != null)
-{
-    rushModeManager.SubmitDrink(propertiesMatch);
-    return;
-}
+        if (rushModeManager != null)
+        {
+            rushModeManager.SubmitDrink(propertiesMatch);
+            return;
+        }
 
-dialogueManager.CloseCocktailPanel();
-dialogueManager.ContinueDialogue();
+        if (dialogueManager != null)
+        {
+            dialogueManager.CloseCocktailPanel();
+            dialogueManager.ContinueDialogue();
+        }
     }
 
     private RecipeData FindRecipe()
@@ -175,7 +200,8 @@ dialogueManager.ContinueDialogue();
         return null;
     }
 
-    private float CalculateProperty(System.Func<IngredientData, int> selector)
+    private float CalculateProperty(
+        System.Func<IngredientData, int> selector)
     {
         return selector(selectedIngredients[0]) * 0.60f
              + selector(selectedIngredients[1]) * 0.25f
@@ -200,37 +226,30 @@ dialogueManager.ContinueDialogue();
         PropertyLevel strength,
         PropertyLevel freshness)
     {
+        if (dialogueManager == null)
+            return false;
+
         DialogueLine currentLine = dialogueManager.CurrentLine;
 
         if (currentLine.requiredSweetness != PropertyLevel.None &&
             currentLine.requiredSweetness != sweetness)
-        {
             return false;
-        }
 
         if (currentLine.requiredSourness != PropertyLevel.None &&
             currentLine.requiredSourness != sourness)
-        {
             return false;
-        }
 
         if (currentLine.requiredBitterness != PropertyLevel.None &&
             currentLine.requiredBitterness != bitterness)
-        {
             return false;
-        }
 
         if (currentLine.requiredStrength != PropertyLevel.None &&
             currentLine.requiredStrength != strength)
-        {
             return false;
-        }
 
         if (currentLine.requiredFreshness != PropertyLevel.None &&
             currentLine.requiredFreshness != freshness)
-        {
             return false;
-        }
 
         return true;
     }
@@ -239,16 +258,83 @@ dialogueManager.ContinueDialogue();
     {
         selectedIngredients.Clear();
 
-        slot1.Clear();
-        slot2.Clear();
-        slot3.Clear();
+        if (slot1 != null)
+            slot1.Clear();
+
+        if (slot2 != null)
+            slot2.Clear();
+
+        if (slot3 != null)
+            slot3.Clear();
+
+        UpdatePropertyBars();
     }
 
-    
-public void ResetSelection()
-{
-    ClearSelection();
-    Debug.Log("Ingredient selection reset.");
-}
+    public void ResetSelection()
+    {
+        ClearSelection();
+        Debug.Log("Ingredient selection reset.");
+    }
 
+    private void UpdatePropertyBars()
+    {
+        if (selectedIngredients.Count == 0)
+        {
+            SetPropertyBar(sweetnessBar, sweetnessValue, 0f);
+            SetPropertyBar(sournessBar, sournessValue, 0f);
+            SetPropertyBar(bitternessBar, bitternessValue, 0f);
+            SetPropertyBar(strengthBar, strengthValue, 0f);
+            SetPropertyBar(freshnessBar, freshnessValue, 0f);
+            return;
+        }
+
+        float[] weights = { 0.60f, 0.25f, 0.15f };
+        float totalWeight = 0f;
+
+        float sweetness = 0f;
+        float sourness = 0f;
+        float bitterness = 0f;
+        float strength = 0f;
+        float freshness = 0f;
+
+        for (int i = 0; i < selectedIngredients.Count; i++)
+        {
+            IngredientData ingredient = selectedIngredients[i];
+            float weight = weights[i];
+
+            totalWeight += weight;
+
+            sweetness += ingredient.sweetness * weight;
+            sourness += ingredient.sourness * weight;
+            bitterness += ingredient.bitterness * weight;
+            strength += ingredient.strength * weight;
+            freshness += ingredient.freshness * weight;
+        }
+
+        sweetness /= totalWeight;
+        sourness /= totalWeight;
+        bitterness /= totalWeight;
+        strength /= totalWeight;
+        freshness /= totalWeight;
+
+        SetPropertyBar(sweetnessBar, sweetnessValue, sweetness);
+        SetPropertyBar(sournessBar, sournessValue, sourness);
+        SetPropertyBar(bitternessBar, bitternessValue, bitterness);
+        SetPropertyBar(strengthBar, strengthValue, strength);
+        SetPropertyBar(freshnessBar, freshnessValue, freshness);
+    }
+
+    private void SetPropertyBar(
+        Image bar,
+        TMP_Text valueText,
+        float value)
+    {
+        value = Mathf.Clamp(value, 0f, 10f);
+
+        if (bar != null)
+            bar.fillAmount = value / 10f;
+
+        if (valueText != null)
+            valueText.text = Mathf.RoundToInt(value) + "/10";
+    }
 }
