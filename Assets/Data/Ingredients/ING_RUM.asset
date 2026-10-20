@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ING_RUM
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
   ingredientName: Rum
+  isAlcoholic: 1
   icon: {fileID: 0}
   sweetness: 2
   sourness: 0

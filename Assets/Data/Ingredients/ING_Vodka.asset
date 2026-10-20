@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ING_Vodka
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
   ingredientName: Vodka
+  isAlcoholic: 1
   icon: {fileID: 0}
   sweetness: 0
   sourness: 0
