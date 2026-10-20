@@ -1,3 +1,4 @@
+
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -18,7 +19,7 @@ public class RushModeManager : MonoBehaviour
     public TMP_Text finalScoreText;
 
     [Header("Cocktail UI")]
-public GameObject cocktailPanel;
+    public GameObject cocktailPanel;
 
     [Header("Current Order")]
     public PropertyLevel requiredSweetness;
@@ -27,27 +28,38 @@ public GameObject cocktailPanel;
     public PropertyLevel requiredStrength;
     public PropertyLevel requiredFreshness;
 
+    [Header("Random Customers")]
+    public List<string> customerNames = new List<string>
+    {
+        "Alex", "Mia", "Oliver", "Sophie",
+        "Leo", "Emma", "Jack", "Lily",
+        "Noah", "Chloe", "Ethan", "Ruby"
+    };
+
+    private string currentCustomer;
+    private string previousCustomer;
+
     private float remainingTime;
     private int score;
     private int completedOrders;
     private bool gameRunning;
 
-private void Start()
-{
-    remainingTime = timeLimit;
-    score = 0;
-    completedOrders = 0;
-    gameRunning = true;
+    private void Start()
+    {
+        remainingTime = timeLimit;
+        score = 0;
+        completedOrders = 0;
+        gameRunning = true;
 
-    if (gameOverPanel != null)
-        gameOverPanel.SetActive(false);
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(false);
 
-    if (cocktailPanel != null)
-        cocktailPanel.SetActive(true);
+        if (cocktailPanel != null)
+            cocktailPanel.SetActive(true);
 
-    GenerateOrder();
-    UpdateUI();
-}
+        GenerateOrder();
+        UpdateUI();
+    }
 
     private void Update()
     {
@@ -83,6 +95,8 @@ private void Start()
         requiredStrength = PropertyLevel.None;
         requiredFreshness = PropertyLevel.None;
 
+        ChooseRandomCustomer();
+
         int requirementCount;
 
         if (completedOrders < 3)
@@ -114,19 +128,15 @@ private void Start()
                 case 0:
                     requiredSweetness = level;
                     break;
-
                 case 1:
                     requiredSourness = level;
                     break;
-
                 case 2:
                     requiredBitterness = level;
                     break;
-
                 case 3:
                     requiredStrength = level;
                     break;
-
                 case 4:
                     requiredFreshness = level;
                     break;
@@ -136,6 +146,31 @@ private void Start()
         UpdateOrderText();
     }
 
+    private void ChooseRandomCustomer()
+    {
+        if (customerNames == null || customerNames.Count == 0)
+        {
+            currentCustomer = "Customer";
+            return;
+        }
+
+        if (customerNames.Count == 1)
+        {
+            currentCustomer = customerNames[0];
+            previousCustomer = currentCustomer;
+            return;
+        }
+
+        List<string> availableNames = new List<string>(customerNames);
+
+        availableNames.RemoveAll(name => name == previousCustomer);
+
+        currentCustomer =
+            availableNames[Random.Range(0, availableNames.Count)];
+
+        previousCustomer = currentCustomer;
+    }
+
     private void UpdateOrderText()
     {
         if (orderText == null)
@@ -143,33 +178,146 @@ private void Start()
 
         List<string> requests = new List<string>();
 
-        AddRequest(requests, "Sweetness", requiredSweetness);
-        AddRequest(requests, "Sourness", requiredSourness);
-        AddRequest(requests, "Bitterness", requiredBitterness);
-        AddRequest(requests, "Strength", requiredStrength);
-        AddRequest(requests, "Freshness", requiredFreshness);
+        AddRequest(requests, requiredSweetness,
+            "sweetness", "not too sweet",
+            "nicely balanced sweetness", "quite sweet");
 
-        orderText.text = "Customer Order:\n"
-            + string.Join("\n", requests);
+        AddRequest(requests, requiredSourness,
+            "sourness", "not too sour",
+            "a little tangy", "quite sour");
+
+        AddRequest(requests, requiredBitterness,
+            "bitterness", "not too bitter",
+            "a hint of bitterness", "quite bitter");
+
+        AddRequest(requests, requiredStrength,
+            "strength", "light",
+            "moderately strong", "strong");
+
+        AddRequest(requests, requiredFreshness,
+            "freshness", "a mellow taste",
+            "a fresh and balanced taste", "very refreshing");
+
+        string requestText = BuildRequestSentence(requests);
+
+        orderText.text =
+            currentCustomer + ":\n" + requestText;
     }
 
     private void AddRequest(
         List<string> requests,
+        PropertyLevel level,
         string attribute,
-        PropertyLevel level)
+        string lowDescription,
+        string mediumDescription,
+        string highDescription)
     {
         if (level == PropertyLevel.None)
             return;
 
-        string description = level switch
-        {
-            PropertyLevel.Low => "Low",
-            PropertyLevel.Medium => "Medium",
-            PropertyLevel.High => "High",
-            _ => ""
-        };
+        string description;
 
-        requests.Add(attribute + ": " + description);
+        switch (level)
+        {
+            case PropertyLevel.Low:
+                description = lowDescription;
+                break;
+
+            case PropertyLevel.Medium:
+                description = mediumDescription;
+                break;
+
+            case PropertyLevel.High:
+                description = highDescription;
+                break;
+
+            default:
+                return;
+        }
+
+        requests.Add(description);
+    }
+
+    private string BuildRequestSentence(List<string> requests)
+    {
+        if (requests.Count == 0)
+            return "Surprise me! Make me something nice.";
+
+        if (requests.Count == 1)
+            return GetSingleRequest(requests[0]);
+
+        if (requests.Count == 2)
+        {
+            return "Could I get something that's "
+                + requests[0] + " and " + requests[1] + "?";
+        }
+
+        string combined = "";
+
+        for (int i = 0; i < requests.Count; i++)
+        {
+            if (i > 0)
+                combined += i == requests.Count - 1
+                    ? ", and "
+                    : ", ";
+
+            combined += requests[i];
+        }
+
+        return "I'd like a drink that's " + combined + ", please.";
+    }
+
+    private string GetSingleRequest(string request)
+    {
+        return request switch
+        {
+            "not too sweet" =>
+                "Could I get something that's not too sweet, please?",
+
+            "nicely balanced sweetness" =>
+                "I'd like something with balanced sweetness, please.",
+
+            "quite sweet" =>
+                "Could you make me something sweet?",
+
+            "not too sour" =>
+                "I'd prefer something that's not too sour.",
+
+            "a little tangy" =>
+                "Could I get something a little tangy?",
+
+            "quite sour" =>
+                "I'd love something with a strong sour taste.",
+
+            "not too bitter" =>
+                "Could I get something that's not too bitter?",
+
+            "a hint of bitterness" =>
+                "I'd like a drink with just a hint of bitterness.",
+
+            "quite bitter" =>
+                "Could you make me something quite bitter?",
+
+            "light" =>
+                "I'd like something light, please.",
+
+            "moderately strong" =>
+                "Could I get something moderately strong?",
+
+            "strong" =>
+                "I could really use a strong drink.",
+
+            "a mellow taste" =>
+                "Could you make me something with a mellow taste?",
+
+            "a fresh and balanced taste" =>
+                "I'd like something fresh and balanced.",
+
+            "very refreshing" =>
+                "Could I get something really refreshing?",
+
+            _ => "Could I get something like that, please?"
+        };
     }
 
     public bool CheckRequirements(
@@ -219,15 +367,10 @@ private void Start()
     private void UpdateUI()
     {
         if (timerText != null)
-        {
-            timerText.text =
-                Mathf.CeilToInt(remainingTime).ToString();
-        }
+            timerText.text = Mathf.CeilToInt(remainingTime).ToString();
 
         if (scoreText != null)
-        {
             scoreText.text = "Score: " + score;
-        }
     }
 
     public void RestartGame()

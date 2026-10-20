@@ -6757,7 +6757,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -649.03906, y: -2.2202625, z: -297.3237, w: -82.086914}
+  m_margin: {x: -649.03906, y: -2.2202625, z: -397.6803, w: -82.086914}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6787,7 +6787,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -84, y: -335}
+  m_AnchoredPosition: {x: -84, y: -243}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1613596012
@@ -7399,6 +7399,19 @@ MonoBehaviour:
   requiredBitterness: 0
   requiredStrength: 0
   requiredFreshness: 0
+  customerNames:
+  - Alex
+  - Mia
+  - Oliver
+  - Sophie
+  - Leo
+  - Emma
+  - Jack
+  - Lily
+  - Noah
+  - Chloe
+  - Ethan
+  - Ruby
 --- !u!4 &1786540267
 Transform:
   m_ObjectHideFlags: 0
