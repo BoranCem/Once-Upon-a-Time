@@ -6,6 +6,9 @@ public class IngredientData : ScriptableObject
     [Header("Information")]
     public string ingredientName;
 
+    [Header("Ingredient Type")]
+    public bool isAlcoholic;
+
     public Sprite icon;
 
     [Header("Taste")]

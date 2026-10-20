@@ -72,6 +72,12 @@ public class CocktailManager : MonoBehaviour
             return;
         }
 
+if (selectedIngredients.Count == 0 && !ingredient.isAlcoholic)
+{
+    Debug.Log("First ingredient must be alcoholic.");
+    return;
+}
+
         selectedIngredients.Add(ingredient);
 
         switch (selectedIngredients.Count)
