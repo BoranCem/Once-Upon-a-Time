@@ -31,6 +31,8 @@ public class CocktailManager : MonoBehaviour
 
     public IngredientButton ingredientButtonPrefab;
 
+    private List<IngredientButton> ingredientButtons = new();
+
     private List<IngredientData> selectedIngredients = new();
 
     [Header("Drink Property Bars")]
@@ -54,15 +56,20 @@ public class CocktailManager : MonoBehaviour
     }
 
     private void CreateIngredientButtons()
-    {
-        foreach (IngredientData ingredient in ingredients)
-        {
-            IngredientButton button =
-                Instantiate(ingredientButtonPrefab, ingredientGrid);
+{
+    ingredientButtons.Clear();
 
-            button.Setup(ingredient, this);
-        }
+    foreach (IngredientData ingredient in ingredients)
+    {
+        IngredientButton button =
+            Instantiate(ingredientButtonPrefab, ingredientGrid);
+
+        button.Setup(ingredient, this);
+        ingredientButtons.Add(button);
     }
+
+    UpdateIngredientButtons();
+}
 
     public void SelectIngredient(IngredientData ingredient)
     {
@@ -96,9 +103,24 @@ if (selectedIngredients.Count == 0 && !ingredient.isAlcoholic)
         }
 
         UpdatePropertyBars();
+        UpdateIngredientButtons();
 
         Debug.Log("Selected: " + ingredient.ingredientName);
     }
+
+    public bool HasSelectedAlcohol()
+{
+    return selectedIngredients.Count > 0
+        && selectedIngredients[0].isAlcoholic;
+}
+
+private void UpdateIngredientButtons()
+{
+    foreach (IngredientButton button in ingredientButtons)
+    {
+        button.UpdateAppearance();
+    }
+}
 
     public void MixDrink()
     {
@@ -261,20 +283,21 @@ if (selectedIngredients.Count == 0 && !ingredient.isAlcoholic)
     }
 
     public void ClearSelection()
-    {
-        selectedIngredients.Clear();
+{
+    selectedIngredients.Clear();
 
-        if (slot1 != null)
-            slot1.Clear();
+    if (slot1 != null)
+        slot1.Clear();
 
-        if (slot2 != null)
-            slot2.Clear();
+    if (slot2 != null)
+        slot2.Clear();
 
-        if (slot3 != null)
-            slot3.Clear();
+    if (slot3 != null)
+        slot3.Clear();
 
-        UpdatePropertyBars();
-    }
+    UpdatePropertyBars();
+    UpdateIngredientButtons();
+}
 
     public void ResetSelection()
     {
