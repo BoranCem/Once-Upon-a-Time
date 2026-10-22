@@ -15,7 +15,7 @@ MonoBehaviour:
   lines:
   - speaker: {fileID: 11400000, guid: cb90851621ffdfd48831efc137ae5546, type: 2}
     text: "Hello. I didn\u2019t expect to find a bar in a place like that."
-    action: 0
+    action: 2
     requiredSweetness: 0
     requiredBitterness: 0
     requiredStrength: 0
@@ -266,7 +266,7 @@ MonoBehaviour:
     requiredSourness: 0
   - speaker: {fileID: 11400000, guid: 2d2c7f96e68272245881aa66fb59909e, type: 2}
     text: Ayee!! How be me favorite barman doin'?
-    action: 0
+    action: 2
     requiredSweetness: 0
     requiredBitterness: 0
     requiredStrength: 0

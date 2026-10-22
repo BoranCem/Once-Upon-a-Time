@@ -1,3 +1,4 @@
+
 using TMPro;
 using UnityEngine;
 
@@ -12,6 +13,10 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Panels")]
     public GameObject cocktailPanel;
+
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip customerArrivalSound;
 
     private int index = 0;
 
@@ -35,53 +40,63 @@ public class DialogueManager : MonoBehaviour
         dialogue = newDialogue;
         index = 0;
 
+        // Play the customer arrival sound in Story Mode.
+        if (audioSource != null && customerArrivalSound != null)
+        {
+            audioSource.PlayOneShot(customerArrivalSound);
+        }
+
         ShowDialogue();
     }
 
     private void ShowDialogue()
+{
+    DialogueLine line = dialogue.lines[index];
+
+    if (line.action == DialogueAction.CustomerArrival)
     {
-        characterName.text = dialogue.lines[index].speaker.characterName;
-        characterName.color = dialogue.lines[index].speaker.nameColor;
-
-        dialogueText.text = dialogue.lines[index].text;
-    }
-
-    public void NextDialogue()
-    {
-        index++;
-
-        if (index >= dialogue.lines.Length)
+        if (audioSource != null && customerArrivalSound != null)
         {
-            Debug.Log("Dialogue Finished!");
-            return;
-        }
-
-        DialogueLine currentLine = dialogue.lines[index];
-
-        switch (currentLine.action)
-        {
-            case DialogueAction.WaitForCocktail:
-
-                dialogueText.text = "";
-                characterName.text = "";
-
-                OpenCocktailPanel();
-
-                break;
-
-            case DialogueAction.EndDay:
-
-                gameManager.EndDay();
-
-                break;
-
-            default:
-
-                ShowDialogue();
-
-                break;
+            audioSource.PlayOneShot(customerArrivalSound);
         }
     }
+
+    characterName.text = line.speaker.characterName;
+    characterName.color = line.speaker.nameColor;
+    dialogueText.text = line.text;
+}
+
+    
+public void NextDialogue()
+{
+    index++;
+
+    if (index >= dialogue.lines.Length)
+    {
+        Debug.Log("Dialogue Finished!");
+        return;
+    }
+
+    DialogueLine currentLine = dialogue.lines[index];
+
+    switch (currentLine.action)
+    {
+        case DialogueAction.WaitForCocktail:
+            dialogueText.text = "";
+            characterName.text = "";
+            OpenCocktailPanel();
+            break;
+
+        case DialogueAction.EndDay:
+            gameManager.EndDay();
+            break;
+
+        default:
+            ShowDialogue();
+            break;
+    }
+}
+
 
     public void OpenCocktailPanel()
     {
