@@ -7112,6 +7112,8 @@ MonoBehaviour:
   slot1: {fileID: 897119669}
   slot2: {fileID: 1061293548}
   slot3: {fileID: 675577033}
+  audioSource: {fileID: 60588575}
+  cocktailMixSound: {fileID: 8300000, guid: 3bbf01755dfed7e4487ce2471c4ea5d5, type: 3}
   recipes:
   - {fileID: 11400000, guid: 08a136a5a0911ba4da66a06338edbdda, type: 2}
   - {fileID: 11400000, guid: ceb49eba70f1a8142aec58b0101d02ac, type: 2}

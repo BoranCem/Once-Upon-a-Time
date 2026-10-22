@@ -17,6 +17,10 @@ public class CocktailManager : MonoBehaviour
     public SelectedSlot slot2;
     public SelectedSlot slot3;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip cocktailMixSound;    
+
     [Header("Recipes")]
     public List<RecipeData> recipes = new();
 
@@ -79,11 +83,11 @@ public class CocktailManager : MonoBehaviour
             return;
         }
 
-if (selectedIngredients.Count == 0 && !ingredient.isAlcoholic)
-{
-    Debug.Log("First ingredient must be alcoholic.");
-    return;
-}
+        if (selectedIngredients.Count == 0 && !ingredient.isAlcoholic)
+        {
+        Debug.Log("First ingredient must be alcoholic.");
+        return;
+        }
 
         selectedIngredients.Add(ingredient);
 
@@ -109,10 +113,10 @@ if (selectedIngredients.Count == 0 && !ingredient.isAlcoholic)
     }
 
     public bool HasSelectedAlcohol()
-{
+    {   
     return selectedIngredients.Count > 0
         && selectedIngredients[0].isAlcoholic;
-}
+    }
 
 private void UpdateIngredientButtons()
 {
@@ -123,11 +127,15 @@ private void UpdateIngredientButtons()
 }
 
     public void MixDrink()
-    {
+    {   
         if (selectedIngredients.Count != 3)
         {
             Debug.Log("Please select 3 ingredients.");
             return;
+        }   
+            if (audioSource != null && cocktailMixSound != null)
+        {
+            audioSource.PlayOneShot(cocktailMixSound);
         }
 
         RecipeData recipe = FindRecipe();
