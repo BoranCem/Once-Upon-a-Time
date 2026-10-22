@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class RushModeManager : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class RushModeManager : MonoBehaviour
     public GameObject gameOverPanel;
     public TMP_Text finalScoreText;
 
+    [Header("Customer")]
+    public List<CharacterData> customers = new List<CharacterData>();
+    public TMP_Text customerNameText;
+    public Image customerPortrait;
+
     [Header("Cocktail UI")]
     public GameObject cocktailPanel;
 
@@ -28,16 +34,8 @@ public class RushModeManager : MonoBehaviour
     public PropertyLevel requiredStrength;
     public PropertyLevel requiredFreshness;
 
-    [Header("Random Customers")]
-    public List<string> customerNames = new List<string>
-    {
-        "Alex", "Mia", "Oliver", "Sophie",
-        "Leo", "Emma", "Jack", "Lily",
-        "Noah", "Chloe", "Ethan", "Ruby"
-    };
-
-    private string currentCustomer;
-    private string previousCustomer;
+    private CharacterData currentCustomer;
+    private CharacterData previousCustomer;
 
     private float remainingTime;
     private int score;
@@ -148,27 +146,64 @@ public class RushModeManager : MonoBehaviour
 
     private void ChooseRandomCustomer()
     {
-        if (customerNames == null || customerNames.Count == 0)
+        if (customers == null || customers.Count == 0)
         {
-            currentCustomer = "Customer";
+            currentCustomer = null;
+            Debug.LogWarning(
+                "Rush Mode: Add CharacterData assets to the Customers list."
+            );
+
+            if (customerNameText != null)
+                customerNameText.text = "Customer";
+
+            if (customerPortrait != null)
+                customerPortrait.enabled = false;
+
             return;
         }
 
-        if (customerNames.Count == 1)
+        List<CharacterData> availableCustomers =
+            new List<CharacterData>();
+
+        foreach (CharacterData customer in customers)
         {
-            currentCustomer = customerNames[0];
-            previousCustomer = currentCustomer;
+            if (customer != null)
+                availableCustomers.Add(customer);
+        }
+
+        if (availableCustomers.Count == 0)
+        {
+            currentCustomer = null;
+            Debug.LogWarning(
+                "Rush Mode: The Customers list contains no valid characters."
+            );
             return;
         }
 
-        List<string> availableNames = new List<string>(customerNames);
+        if (previousCustomer != null &&
+            availableCustomers.Count > 1)
+        {
+            availableCustomers.Remove(previousCustomer);
+        }
 
-        availableNames.RemoveAll(name => name == previousCustomer);
+        int randomIndex =
+            Random.Range(0, availableCustomers.Count);
 
-        currentCustomer =
-            availableNames[Random.Range(0, availableNames.Count)];
-
+        currentCustomer = availableCustomers[randomIndex];
         previousCustomer = currentCustomer;
+
+        if (customerNameText != null)
+        {
+            customerNameText.text = currentCustomer.characterName;
+            customerNameText.color = currentCustomer.nameColor;
+        }
+
+        if (customerPortrait != null)
+        {
+            customerPortrait.sprite = currentCustomer.portrait;
+            customerPortrait.enabled =
+                currentCustomer.portrait != null;
+        }
     }
 
     private void UpdateOrderText()
@@ -178,64 +213,70 @@ public class RushModeManager : MonoBehaviour
 
         List<string> requests = new List<string>();
 
-        AddRequest(requests, requiredSweetness,
-            "sweetness", "not too sweet",
-            "nicely balanced sweetness", "quite sweet");
+        AddRequest(
+            requests, requiredSweetness,
+            "not too sweet",
+            "nicely balanced sweetness",
+            "quite sweet"
+        );
 
-        AddRequest(requests, requiredSourness,
-            "sourness", "not too sour",
-            "a little tangy", "quite sour");
+        AddRequest(
+            requests, requiredSourness,
+            "not too sour",
+            "a little tangy",
+            "quite sour"
+        );
 
-        AddRequest(requests, requiredBitterness,
-            "bitterness", "not too bitter",
-            "a hint of bitterness", "quite bitter");
+        AddRequest(
+            requests, requiredBitterness,
+            "not too bitter",
+            "a hint of bitterness",
+            "quite bitter"
+        );
 
-        AddRequest(requests, requiredStrength,
-            "strength", "light",
-            "moderately strong", "strong");
+        AddRequest(
+            requests, requiredStrength,
+            "light",
+            "moderately strong",
+            "strong"
+        );
 
-        AddRequest(requests, requiredFreshness,
-            "freshness", "a mellow taste",
-            "a fresh and balanced taste", "very refreshing");
+        AddRequest(
+            requests, requiredFreshness,
+            "a mellow taste",
+            "a fresh and balanced taste",
+            "very refreshing"
+        );
 
-        string requestText = BuildRequestSentence(requests);
+        string customerName = currentCustomer != null
+            ? currentCustomer.characterName
+            : "Customer";
 
         orderText.text =
-            currentCustomer + ":\n" + requestText;
+            customerName + ":\n" + BuildRequestSentence(requests);
     }
 
     private void AddRequest(
         List<string> requests,
         PropertyLevel level,
-        string attribute,
         string lowDescription,
         string mediumDescription,
         string highDescription)
     {
-        if (level == PropertyLevel.None)
-            return;
-
-        string description;
-
         switch (level)
         {
             case PropertyLevel.Low:
-                description = lowDescription;
+                requests.Add(lowDescription);
                 break;
 
             case PropertyLevel.Medium:
-                description = mediumDescription;
+                requests.Add(mediumDescription);
                 break;
 
             case PropertyLevel.High:
-                description = highDescription;
+                requests.Add(highDescription);
                 break;
-
-            default:
-                return;
         }
-
-        requests.Add(description);
     }
 
     private string BuildRequestSentence(List<string> requests)
@@ -249,7 +290,8 @@ public class RushModeManager : MonoBehaviour
         if (requests.Count == 2)
         {
             return "Could I get something that's "
-                + requests[0] + " and " + requests[1] + "?";
+                + requests[0] + " and "
+                + requests[1] + "?";
         }
 
         string combined = "";
@@ -257,67 +299,71 @@ public class RushModeManager : MonoBehaviour
         for (int i = 0; i < requests.Count; i++)
         {
             if (i > 0)
+            {
                 combined += i == requests.Count - 1
                     ? ", and "
                     : ", ";
+            }
 
             combined += requests[i];
         }
 
-        return "I'd like a drink that's " + combined + ", please.";
+        return "I'd like a drink that's "
+            + combined + ", please.";
     }
 
     private string GetSingleRequest(string request)
     {
-        return request switch
+        switch (request)
         {
-            "not too sweet" =>
-                "Could I get something that's not too sweet, please?",
+            case "not too sweet":
+                return "Could I get something that's not too sweet, please?";
 
-            "nicely balanced sweetness" =>
-                "I'd like something with balanced sweetness, please.",
+            case "nicely balanced sweetness":
+                return "I'd like something with balanced sweetness, please.";
 
-            "quite sweet" =>
-                "Could you make me something sweet?",
+            case "quite sweet":
+                return "Could you make me something sweet?";
 
-            "not too sour" =>
-                "I'd prefer something that's not too sour.",
+            case "not too sour":
+                return "I'd prefer something that's not too sour.";
 
-            "a little tangy" =>
-                "Could I get something a little tangy?",
+            case "a little tangy":
+                return "Could I get something a little tangy?";
 
-            "quite sour" =>
-                "I'd love something with a strong sour taste.",
+            case "quite sour":
+                return "I'd love something with a strong sour taste.";
 
-            "not too bitter" =>
-                "Could I get something that's not too bitter?",
+            case "not too bitter":
+                return "Could I get something that's not too bitter?";
 
-            "a hint of bitterness" =>
-                "I'd like a drink with just a hint of bitterness.",
+            case "a hint of bitterness":
+                return "I'd like a drink with just a hint of bitterness.";
 
-            "quite bitter" =>
-                "Could you make me something quite bitter?",
+            case "quite bitter":
+                return "Could you make me something quite bitter?";
 
-            "light" =>
-                "I'd like something light, please.",
+            case "light":
+                return "I'd like something light, please.";
 
-            "moderately strong" =>
-                "Could I get something moderately strong?",
+            case "moderately strong":
+                return "Could I get something moderately strong?";
 
-            "strong" =>
-                "I could really use a strong drink.",
+            case "strong":
+                return "I could really use a strong drink.";
 
-            "a mellow taste" =>
-                "Could you make me something with a mellow taste?",
+            case "a mellow taste":
+                return "Could you make me something with a mellow taste?";
 
-            "a fresh and balanced taste" =>
-                "I'd like something fresh and balanced.",
+            case "a fresh and balanced taste":
+                return "I'd like something fresh and balanced.";
 
-            "very refreshing" =>
-                "Could I get something really refreshing?",
+            case "very refreshing":
+                return "Could I get something really refreshing?";
 
-            _ => "Could I get something like that, please?"
-        };
+            default:
+                return "Could I get something like that, please?";
+        }
     }
 
     public bool CheckRequirements(
@@ -367,10 +413,15 @@ public class RushModeManager : MonoBehaviour
     private void UpdateUI()
     {
         if (timerText != null)
-            timerText.text = Mathf.CeilToInt(remainingTime).ToString();
+        {
+            timerText.text =
+                Mathf.CeilToInt(remainingTime).ToString();
+        }
 
         if (scoreText != null)
+        {
             scoreText.text = "Score: " + score;
+        }
     }
 
     public void RestartGame()
