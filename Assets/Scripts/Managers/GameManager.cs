@@ -8,10 +8,6 @@ public class GameManager : MonoBehaviour
 
     private int currentDay = 0;
 
-    private void Start()
-    {
-        StartDay();
-    }
 
     public void StartDay()
     {

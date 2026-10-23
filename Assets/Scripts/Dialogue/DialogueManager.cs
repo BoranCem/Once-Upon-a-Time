@@ -1,4 +1,4 @@
-
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
 
     public GameManager gameManager;
 
+    public GameObject dialoguePanel;
     public DialogueLine CurrentLine
     {
         get
@@ -30,10 +31,25 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        cocktailPanel.SetActive(false);
-    }
+    private void Start()
+{
+    cocktailPanel.SetActive(false);
+    StartCoroutine(StartDialogueAfterDelay());
+}
+
+private IEnumerator StartDialogueAfterDelay()
+{
+    if (dialoguePanel != null)
+        dialoguePanel.SetActive(false);
+
+    yield return new WaitForSeconds(5f);
+
+    if (dialoguePanel != null)
+        dialoguePanel.SetActive(true);
+
+    if (gameManager != null)
+        gameManager.StartDay();
+}
 
     public void StartDialogue(DialogueData newDialogue)
     {
