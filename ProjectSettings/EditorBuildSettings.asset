@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/MainMenu.unity
     guid: 205b9aa5ca1cfeb49b8fcb5d8ca17e64
+  - enabled: 1
+    path: Assets/Scenes/RushModeScene.unity
+    guid: 3b825ca64534b3743a5a944342b4b105
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
