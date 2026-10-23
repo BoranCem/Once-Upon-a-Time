@@ -248,12 +248,7 @@ public class RushModeManager : MonoBehaviour
             "very refreshing"
         );
 
-        string customerName = currentCustomer != null
-            ? currentCustomer.characterName
-            : "Customer";
-
-        orderText.text =
-            customerName + ":\n" + BuildRequestSentence(requests);
+        orderText.text = BuildRequestSentence(requests);
     }
 
     private void AddRequest(
