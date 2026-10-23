@@ -18,6 +18,12 @@ public class DialogueManager : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip customerArrivalSound;
 
+    [Header("Typewriter Effect")]
+    public float typingSpeed = 30f;
+
+    private Coroutine typingCoroutine;
+    private bool isTyping = false;
+    private string currentFullText;
     private int index = 0;
 
     public GameManager gameManager;
@@ -69,6 +75,7 @@ private IEnumerator StartDialogueAfterDelay()
 {
     DialogueLine line = dialogue.lines[index];
 
+    // Müşteri geliş sesi
     if (line.action == DialogueAction.CustomerArrival)
     {
         if (audioSource != null && customerArrivalSound != null)
@@ -79,12 +86,49 @@ private IEnumerator StartDialogueAfterDelay()
 
     characterName.text = line.speaker.characterName;
     characterName.color = line.speaker.nameColor;
-    dialogueText.text = line.text;
+
+    currentFullText = line.text;
+    dialogueText.text = "";
+
+    if (typingCoroutine != null)
+    {
+        StopCoroutine(typingCoroutine);
+    }
+
+    typingCoroutine = StartCoroutine(TypeText());
 }
 
-    
+    private IEnumerator TypeText()
+{
+    isTyping = true;
+    dialogueText.text = "";
+
+    foreach (char letter in currentFullText)
+    {
+        dialogueText.text += letter;
+        yield return new WaitForSeconds(1f / typingSpeed);
+    }
+
+    dialogueText.text = currentFullText;
+    isTyping = false;
+    typingCoroutine = null;
+}
+
 public void NextDialogue()
 {
+    if (isTyping)
+{
+    if (typingCoroutine != null)
+    {
+        StopCoroutine(typingCoroutine);
+        typingCoroutine = null;
+    }
+
+    dialogueText.text = currentFullText;
+    isTyping = false;
+    return;
+}
+    
     index++;
 
     if (index >= dialogue.lines.Length)

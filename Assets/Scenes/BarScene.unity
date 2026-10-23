@@ -536,7 +536,9 @@ MonoBehaviour:
   cocktailPanel: {fileID: 1885664532}
   audioSource: {fileID: 60588575}
   customerArrivalSound: {fileID: 8300000, guid: 7473a50a22c841647b088621933ffaf6, type: 3}
+  typingSpeed: 35
   gameManager: {fileID: 1885155732}
+  dialoguePanel: {fileID: 1480743906}
 --- !u!4 &60588574
 Transform:
   m_ObjectHideFlags: 0
